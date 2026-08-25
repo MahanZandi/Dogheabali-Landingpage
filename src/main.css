@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── @font-face: BonyadeKoodak ── */
+
+@font-face {
+  font-family: 'BonyadeKoodak';
+  src: url('../fonts/BonyadeKoodak-VF.woff') format('woff');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BonyadeKoodak';
+  src: url('../fonts/BonyadeKoodakNoEn-VF.woff') format('woff');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BonyadeKoodakNum';
+  src: url('../fonts/BonyadeKoodakFaNum-VF.woff') format('woff');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* ── Base defaults ── */
+body {
+  font-family: 'BonyadeKoodak', sans-serif;
+}
+
+/* ── Hamburger Menu Animation ── */
+#hamburger.is-active .hamburger-line:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+#hamburger.is-active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+#hamburger.is-active .hamburger-line:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
