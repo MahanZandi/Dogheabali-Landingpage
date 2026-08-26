@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دوغ آب علی</title>
+    <link rel="icon" type="image/svg+xml" href="/images/dogh-3.svg">
     <link rel="stylesheet" href="/src/main.css">
 </head>
 
-<body class="bg-gray-100 min-h-screen">
+<body dir="rtl" class="bg-gray-100 min-h-screen">
     <!-- hero -->
-    <header class="bg-abali-darya">
+    <header class="bg-abali-darya pb-[147px] rounded-b-[48px]">
         <nav class="container">
             <div class="relative">
                 <div
@@ -30,33 +31,86 @@
                     </div>
 
                     <!-- logo (absolute center) -->
-                    <img class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[60px] w-fit" src="images/Logo.png" alt="دوغ ابعلی">
-                    
+                    <img class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[60px] w-fit"
+                        src="images/Logo.svg" alt="دوغ ابعلی">
+
                     <div class="flex gap-[14px]">
                         <!-- cart button -->
                         <button class="p-2 bg-[#F0F0F0] rounded-lg">
-                            <img src="public/icons/shopping-cart.svg" alt="cart icon">
-                        </button>
+                            <img src="images/icons/shopping-cart.svg" alt="cart icon">
                         </button>
 
                         <button
                             class="flex rounded-lg gap-2 h-[38px] pl-2 pr-6 bg-abali-darya text-white text-xs font-bold items-center">
                             <span>ثبت نام یا ورود</span>
-                            <img class="size-6" src="public/icons/profile-2user.svg" alt="person icon">
+                            <img class="size-6" src="images/icons/profile-2user.svg" alt="person icon">
                         </button>
                     </div>
                 </div>
-                <div class="h-[105px] relative -top-10 rounded-[22px] pb-[22px] mx-3 bg-[#345B85]">
-                    <div class="text-base text-white font-semibold flex gap-10 justify-center items-end h-full">
-                        <a href="/"> نظرات شما</a>
-                        <a href="/">خرید آنلاین </a>
-                        <a href="/">آشنایی با ما </a>
-                        <a href="/">ویژگی ها</a>
-                    </div>
+                <div class="h-[105px] relative -top-10 rounded-[22px] pb-4 mx-3 bg-[#345B85]">
+                    <nav id="nav-links"
+                        class="relative text-base text-white font-semibold flex gap-10 justify-center items-end h-full">
+                        <a href="/" class="nav-link relative pb-1"> نظرات شما</a>
+                        <a href="/" class="nav-link relative pb-1">خرید آنلاین </a>
+                        <a href="/" class="nav-link relative pb-1">آشنایی با ما </a>
+                        <a href="/" class="nav-link relative pb-1">ویژگی ها</a>
+                        <span id="nav-indicator"
+                            class="absolute bottom-0 h-[2px] bg-white rounded-full transition-all duration-300 ease-out"></span>
+                    </nav>
                 </div>
             </div>
         </nav>
+
+        <!-- hero title -->
+        <div class="mt-[75px] flex justify-center">
+            <div class="text-white flex flex-col items-center">
+                <h2 class="px-5 py-[10px] text-[28px] font-medium bg-white/20 rounded-lg w-fit">
+                    با آبعلی خاطره هات رو به یادماندنی کن <img src="images/🍶.png" alt="">
+                </h2>
+
+                <h2 class="text-[120px] font-black">
+                    دوغـت رو بنــــوش!
+                </h2>
+                <div class="mt-[11px] lg:pr-36 w-full flex gap-3">
+                    <span class="text-white text-2xl">از اینجا بازش کن!</span>
+                    <img src="images/icons/Arrow.png" alt="Arrow">
+                </div>
+            </div>
+        </div>
+
+        <!-- header background -->
+        <div class="mt-[170px] flex justify-center">
+            <div class="relative">
+                <img src="images/yellow-background.png" alt="yellow-background">
+
+                <img class="absolute -top-36 -right-10 z-10" src="images/dogh-1.svg" alt="دوغ آبعلی">
+                <div class="relative">
+                    <div class="absolute bottom-28 right-44">
+                        <img src="images/Subtract-r.svg" alt="Subtract">
+                        <div class="absolute -top-1.5 -left-2 bg-white rounded-full size-[58px]"></div>
+                    </div>
+                </div>
+
+                <img class="absolute -top-56 -left-10 z-10" src="images/dogh-2.svg" alt="دوغ آبعلی">
+                <div class="absolute bottom-28 left-44">
+                    <img src="images/Subtract-l.svg" alt="Subtract">
+                    <div class="absolute -top-1 -right-2 bg-white rounded-full size-[58px]"></div>
+                </div>
+
+                <img class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" src="images/dogh.svg"
+                    alt="دوغ آبعلی">
+            </div>
+        </div>
+
     </header>
+
+    <!-- main content -->
+    <main class="container py-20">
+        <div class="h-[500px] flex items-center justify-center text-gray-400 text-xl">
+            محتوای پروژه اینجا قرار میگیره
+        </div>
+    </main>
+
     <script type="module" src="/src/main.js"></script>
 </body>
 

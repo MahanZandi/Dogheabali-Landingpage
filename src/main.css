@@ -26,6 +26,10 @@
 }
 
 /* ── Base defaults ── */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'BonyadeKoodak', sans-serif;
 }
