@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/src/main.css">
 </head>
 
-<body dir="rtl" class="bg-gray-100 min-h-screen">
+<body dir="rtl" class="bg-gray-100 min-h-screen overflow-x-hidden">
     <!-- hero -->
     <header class="bg-abali-darya pb-[147px] rounded-b-[48px]">
         <nav class="container">
@@ -62,7 +62,13 @@
         </nav>
 
         <!-- hero title -->
-        <div class="mt-[75px] flex justify-center">
+        <div class="mt-[75px] flex justify-center relative">
+            <!-- halo 1 (top-right, near "دوغت") -->
+            <div class="absolute -top-20 -right-20 w-[411px] h-[411px] rounded-full bg-white/39 blur-[100px] pointer-events-none"></div>
+
+            <!-- halo 2 (right, near "بنوش") -->
+            <div class="absolute top-44 -right-40 w-[411px] h-[411px] rounded-full bg-white/25 blur-[100px] pointer-events-none"></div>
+
             <div class="text-white flex flex-col items-center">
                 <h2 class="px-5 py-[10px] text-[28px] font-medium bg-white/20 rounded-lg w-fit">
                     با آبعلی خاطره هات رو به یادماندنی کن <img src="images/🍶.png" alt="">
@@ -79,7 +85,9 @@
         </div>
 
         <!-- header background -->
-        <div class="mt-[170px] flex justify-center">
+        <div class="mt-[170px] flex justify-center relative">
+            <!-- halo 3 (below yellow bg, left of center item) -->
+            <div class="absolute -bottom-40 -left-32 w-[411px] h-[411px] rounded-full bg-white/39 blur-[100px] pointer-events-none"></div>
             <div class="relative">
                 <img src="images/yellow-background.png" alt="yellow-background">
 
@@ -114,7 +122,7 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- center hero image dogh -->
                 <img class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" src="images/dogh.svg"
                     alt="دوغ آبعلی">
             </div>
@@ -123,10 +131,10 @@
     </header>
 
     <!-- main content -->
-    <main class="container py-20">
-        <div class="h-[500px] flex items-center justify-center text-gray-400 text-xl">
-            محتوای پروژه اینجا قرار میگیره
-        </div>
+    <main class="container flex flex-col">
+        <section>
+
+        </section>
     </main>
 
     <script type="module" src="/src/main.js"></script>
