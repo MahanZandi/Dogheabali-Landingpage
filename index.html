@@ -64,14 +64,19 @@
         <!-- hero title -->
         <div class="mt-[75px] flex justify-center relative">
             <!-- halo 1 (top-right, near "دوغت") -->
-            <div class="absolute -top-20 -right-20 w-[411px] h-[411px] rounded-full bg-white/39 blur-[100px] pointer-events-none"></div>
+            <div
+                class="absolute -top-20 -right-20 w-[411px] h-[411px] rounded-full bg-white/39 blur-[100px] pointer-events-none">
+            </div>
 
             <!-- halo 2 (right, near "بنوش") -->
-            <div class="absolute top-44 -right-40 w-[411px] h-[411px] rounded-full bg-white/25 blur-[100px] pointer-events-none"></div>
+            <div
+                class="absolute top-44 -right-40 w-[411px] h-[411px] rounded-full bg-white/25 blur-[100px] pointer-events-none">
+            </div>
 
             <div class="text-white flex flex-col items-center">
-                <h2 class="px-5 py-[10px] text-[28px] font-medium bg-white/20 rounded-lg w-fit">
-                    با آبعلی خاطره هات رو به یادماندنی کن <img src="images/🍶.png" alt="">
+                <h2 class="px-5 py-[10px] text-[28px] font-medium bg-white/20 rounded-lg w-fit flex gap-2 items-center">
+                    <span> با آبعلی خاطره هات رو به یادماندنی کن </span> <img src="images/icon.png" class="size-8"
+                        alt="">
                 </h2>
 
                 <h2 class="text-[120px] font-black">
@@ -87,7 +92,9 @@
         <!-- header background -->
         <div class="mt-[170px] flex justify-center relative">
             <!-- halo 3 (below yellow bg, left of center item) -->
-            <div class="absolute -bottom-40 -left-32 w-[411px] h-[411px] rounded-full bg-white/39 blur-[100px] pointer-events-none"></div>
+            <div
+                class="absolute -bottom-40 -left-32 w-[411px] h-[411px] rounded-full bg-white/39 blur-[100px] pointer-events-none">
+            </div>
             <div class="relative">
                 <img src="images/yellow-background.png" alt="yellow-background">
 
@@ -95,7 +102,8 @@
                 <div class="relative">
                     <div class="absolute bottom-28 right-44">
                         <img src="images/Subtract-r.svg" alt="Subtract">
-                        <div class="absolute flex items-center justify-center -top-1.5 -left-2 bg-white rounded-full size-[58px]">
+                        <div
+                            class="absolute flex items-center justify-center -top-1.5 -left-2 bg-white rounded-full size-[58px]">
                             <img class="size-6" src="images/icons/arrow-circle-left.svg" alt="arrow">
                         </div>
                         <!-- text overlay -->
@@ -111,7 +119,8 @@
                 <img class="absolute -top-56 -left-10 z-10" src="images/dogh-2.svg" alt="دوغ آبعلی">
                 <div class="absolute bottom-28 left-44">
                     <img src="images/Subtract-l.svg" alt="Subtract">
-                    <div class="absolute flex items-center justify-center -top-1 -right-2 bg-white rounded-full size-[58px]">
+                    <div
+                        class="absolute flex items-center justify-center -top-1 -right-2 bg-white rounded-full size-[58px]">
                         <img class="size-6 rotate-180" src="images/icons/arrow-circle-left.svg" alt="arrow">
                     </div>
                     <!-- text overlay -->
@@ -123,8 +132,22 @@
                     </div>
                 </div>
                 <!-- center hero image dogh -->
-                <img class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" src="images/dogh.svg"
-                    alt="دوغ آبعلی">
+                <div id="dogh-animation"
+                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible">
+                    <img id="dogh-main" class="dogh-animated" src="images/dogh.svg" alt="دوغ آبعلی">
+                    <div id="dogh-frame-2-wrapper" class="hidden relative">
+                        <img id="dogh-frame-2" class="dogh-frame-2" src="images/dogh-frame-2.png" alt="دوغ آبعلی">
+                        <div id="dogh-steam"
+                            class="hidden absolute top-4 left-1/2 -translate-x-1/2 pointer-events-none z-10">
+                            <div class="steam-particle steam-p1"></div>
+                            <div class="steam-particle steam-p2"></div>
+                            <div class="steam-particle steam-p3"></div>
+                            <div class="steam-particle steam-p4"></div>
+                        </div>
+                    </div>
+                    <img id="dogh-frame-3" class="hidden dogh-frame-3 absolute -top-8 left-1/2 -translate-x-1/2"
+                        src="images/dogh-frame-3.png" alt="دوغ آبعلی">
+                </div>
             </div>
         </div>
 
@@ -132,8 +155,39 @@
 
     <!-- main content -->
     <main class="container flex flex-col">
-        <section>
 
+        <section class="py-[124px] flex justify-between">
+            <div class="flex flex-col gap-[42px] justify-center">
+                <span class="text-[32px] font-bold w-fit bg-abali-zafaran py-2 px-3 rounded-md text-[#0E0E0E]">ویژگی های
+                    دوغ آبعلی</span>
+                <span class="text-abali-darya font-black text-[52px]">اصیل ترین نوشیدنی ایرانی</span>
+                <span class="max-w-[478px] text-2xl font-light text-[#0E0E0E]">70 کیلو کالری ، 3.5 گرم پروتئین ، : 7.6
+                    گرم کربوهیدرات ، 3 گرم چربی</span>
+            </div>
+
+            <div class="flex gap-[40px] items-center">
+
+                <div class="size-[511px] relative">
+                    <!-- background -->
+                    <div class="bg-abali-darya w-full h-full rounded-full"></div>
+
+                    <!-- slide 1 , 2 -->
+                    <img class="absolute w-[360px] h-[640px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" src="images/DOGH-BA-STAND.png" alt="دوغ آبعلی">
+                    
+                    <!-- slide 3 -->
+                    <!-- <img class="absolute w-[360px] h-[640px] left-1/2 -translate-x-1/2 -top-24" src="images/DOGH-BA-STAND-3.png" alt="دوغ آبعلی"> -->
+                </div>
+
+                <!-- slider arrow -->
+                <div class="flex flex-col gap-[10px]">
+                    <!-- active slide -->
+                    <div class="w-2 h-[76px] bg-abali-darya rounded-lg"></div>
+
+                    <!-- not active slide -->
+                    <div class="w-2 h-[40px] bg-abali-darya/25 rounded-lg cursor-pointer"></div>
+                    <div class="w-2 h-[40px] bg-abali-darya/25 rounded-lg cursor-pointer"></div>
+                </div>
+            </div>
         </section>
     </main>
 

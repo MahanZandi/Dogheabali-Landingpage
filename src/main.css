@@ -47,3 +47,112 @@ body {
 #hamburger.is-active .hamburger-line:nth-child(3) {
   transform: translateY(-9px) rotate(-45deg);
 }
+
+/* ── Dogh Shake Animation ── */
+.dogh-animated {
+  cursor: pointer;
+}
+
+.dogh-animated.shaking {
+  animation: dogh-shake 0.15s ease-in-out infinite;
+}
+
+@keyframes dogh-shake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-6deg); }
+  75% { transform: rotate(6deg); }
+}
+
+/* ── Dogh Frame 2: white steam burst effect ── */
+.dogh-frame-2 {
+  width: 340px;
+  height: auto;
+  display: block;
+}
+
+#dogh-steam.steaming {
+  display: block !important;
+}
+
+.steam-particle {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.3) 50%, transparent 70%);
+  filter: blur(8px);
+  pointer-events: none;
+}
+
+#dogh-steam.steaming .steam-p1 {
+  width: 110px;
+  height: 110px;
+  left: -20px;
+  animation: steam-rise-1 1s ease-out forwards;
+}
+
+#dogh-steam.steaming .steam-p2 {
+  width: 140px;
+  height: 140px;
+  left: -50px;
+  animation: steam-rise-2 1.1s ease-out 0.1s forwards;
+}
+
+#dogh-steam.steaming .steam-p3 {
+  width: 100px;
+  height: 100px;
+  left: 10px;
+  animation: steam-rise-3 0.9s ease-out 0.15s forwards;
+}
+
+#dogh-steam.steaming .steam-p4 {
+  width: 160px;
+  height: 160px;
+  left: -70px;
+  animation: steam-rise-4 1.2s ease-out 0.05s forwards;
+}
+
+@keyframes steam-rise-1 {
+  0% { opacity: 0; transform: translateY(0) scale(0.4); }
+  25% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-120px) translateX(10px) scale(1.6); }
+}
+
+@keyframes steam-rise-2 {
+  0% { opacity: 0; transform: translateY(0) scale(0.3); }
+  20% { opacity: 0.9; }
+  100% { opacity: 0; transform: translateY(-150px) translateX(-15px) scale(1.9); }
+}
+
+@keyframes steam-rise-3 {
+  0% { opacity: 0; transform: translateY(0) scale(0.5); }
+  30% { opacity: 0.8; }
+  100% { opacity: 0; transform: translateY(-110px) translateX(20px) scale(1.4); }
+}
+
+@keyframes steam-rise-4 {
+  0% { opacity: 0; transform: translateY(0) scale(0.3); }
+  15% { opacity: 0.7; }
+  100% { opacity: 0; transform: translateY(-170px) translateX(-5px) scale(2.1); }
+}
+
+/* ── Dogh Frame 3: launch toward top-right and exit ── */
+.dogh-frame-3.launching {
+  display: block !important;
+  width: 140px;
+  height: auto;
+  animation: dogh-launch 0.7s ease-in forwards;
+}
+
+@keyframes dogh-launch {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(0) scale(0.9);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(calc(-50% + 900px)) translateY(-900px) scale(1.4) rotate(24deg);
+  }
+}
