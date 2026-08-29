@@ -156,37 +156,114 @@
     <!-- main content -->
     <main class="container flex flex-col">
 
-        <section class="py-[124px] flex justify-between">
-            <div class="flex flex-col gap-[42px] justify-center">
-                <span class="text-[32px] font-bold w-fit bg-abali-zafaran py-2 px-3 rounded-md text-[#0E0E0E]">ویژگی های
-                    دوغ آبعلی</span>
-                <span class="text-abali-darya font-black text-[52px]">اصیل ترین نوشیدنی ایرانی</span>
-                <span class="max-w-[478px] text-2xl font-light text-[#0E0E0E]">70 کیلو کالری ، 3.5 گرم پروتئین ، : 7.6
-                    گرم کربوهیدرات ، 3 گرم چربی</span>
+        <!-- features section -->
+        <section id="features-slider-wrapper" class="h-[220vh] relative">
+            <div id="features-slider"
+                class="sticky top-0 h-screen py-[124px] overflow-hidden flex justify-between items-center">
+                <div class="flex flex-col gap-[42px] justify-center max-w-[520px]">
+                    <span id="slide-tag"
+                        class="text-[32px] font-bold w-fit bg-abali-zafaran py-2 px-3 rounded-md text-[#0E0E0E]">ویژگی
+                        های
+                        دوغ آبعلی</span>
+                    <span id="slide-title" class="text-abali-darya font-black text-[52px] text-focus-in">اصیل ترین
+                        نوشیدنی ایرانی</span>
+                    <span id="slide-desc" class="max-w-[478px] text-2xl font-light text-[#0E0E0E] text-focus-in"
+                        style="animation-delay: 70ms">70 کیلو کالری ، 3.5 گرم پروتئین ، : 7.6
+                        گرم کربوهیدرات ، 3 گرم چربی</span>
+                </div>
+
+                <div class="flex gap-[40px] items-center">
+
+                    <div class="size-[511px] relative">
+                        <!-- background -->
+                        <div class="bg-abali-darya w-full h-full rounded-full"></div>
+
+                        <!-- slides stack (custom sticky, no embla) -->
+                        <div id="slides-track" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[640px] overflow-hidden">
+                            <img class="slide-image absolute inset-0 w-full h-full object-contain opacity-100" src="images/DOGH-BA-STAND.png" alt="دوغ آبعلی" data-index="0">
+                            <img class="slide-image absolute inset-0 w-full h-full object-contain opacity-0 pointer-events-none translate-y-full" src="images/DOGH-BA-STAND-2.png" alt="دوغ آبعلی" data-index="1">
+                            <img class="slide-image absolute inset-0 w-full h-full object-contain opacity-0 pointer-events-none translate-y-full" src="images/DOGH-BA-STAND-3.png" alt="دوغ آبعلی" data-index="2">
+                        </div>
+                    </div>
+
+                    <!-- slider indicators -->
+                    <div class="flex flex-col gap-[10px]">
+                        <button class="slider-indicator w-2 h-[76px] bg-abali-darya rounded-lg" data-slide="0"
+                            aria-label="اسلاید 1"></button>
+                        <button class="slider-indicator w-2 h-[40px] bg-abali-darya/25 rounded-lg" data-slide="1"
+                            aria-label="اسلاید 2"></button>
+                        <button class="slider-indicator w-2 h-[40px] bg-abali-darya/25 rounded-lg" data-slide="2"
+                            aria-label="اسلاید 3"></button>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="flex gap-[40px] items-center">
-
-                <div class="size-[511px] relative">
-                    <!-- background -->
-                    <div class="bg-abali-darya w-full h-full rounded-full"></div>
-
-                    <!-- slide 1 , 2 -->
-                    <img class="absolute w-[360px] h-[640px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" src="images/DOGH-BA-STAND.png" alt="دوغ آبعلی">
-                    
-                    <!-- slide 3 -->
-                    <!-- <img class="absolute w-[360px] h-[640px] left-1/2 -translate-x-1/2 -top-24" src="images/DOGH-BA-STAND-3.png" alt="دوغ آبعلی"> -->
+        <!-- video — embla slider, dir isolated, rounded 73px h 636px -->
+        <section class="py-10">
+            <div class="embla-video relative h-[636px] rounded-[73px] overflow-hidden bg-black" dir="ltr">
+                <div class="embla__container flex h-full">
+                    <div class="embla__slide flex-[0_0_100%] min-w-0 relative h-full">
+                        <div class="video-poster absolute inset-0 cursor-pointer" data-video="0">
+                            <img class="video-thumb absolute inset-0 w-full h-full object-cover opacity-70" src="https://static.cdn.asset.aparat.cloud/avt/45926402-6233-l__1056.jpg?width=900&quality=90&secret=oeI-_TZ77wV70ESIIVc7Zg" alt="ویدیو آبعلی">
+                            <div class="absolute inset-0 bg-black/50"></div>
+                            <button class="video-play absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center" aria-label="پخش ویدیو">
+                                <span class="absolute size-[160px] rounded-full bg-white/20 backdrop-blur-[2px]"></span>
+                                <span class="absolute size-[110px] rounded-full bg-white flex items-center justify-center shadow-xl">
+                                    <img src="images/icons/play.svg" alt="play" class="size-[70px]">
+                                </span>
+                            </button>
+                            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pointer-events-none">
+                                <p class="text-white text-2xl font-bold">چهار نسل خاطره با آبعلی</p>
+                            </div>
+                        </div>
+                        <div class="video-frame hidden absolute inset-0">
+                            <iframe src="https://www.aparat.com/video/video/embed/videohash/1gzrG/vt/frame" class="w-full h-full" allowFullScreen webkitallowfullscreen mozallowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="embla__slide flex-[0_0_100%] min-w-0 relative h-full">
+                        <div class="video-poster absolute inset-0 cursor-pointer" data-video="1">
+                            <img class="video-thumb absolute inset-0 w-full h-full object-cover opacity-70" src="https://static.cdn.asset.aparat.cloud/avt/45926402-6233-l__1056.jpg?width=900&quality=90&secret=oeI-_TZ77wV70ESIIVc7Zg" alt="ویدیو آبعلی 2">
+                            <div class="absolute inset-0 bg-black/50"></div>
+                            <button class="video-play absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center" aria-label="پخش ویدیو">
+                                <span class="absolute size-[160px] rounded-full bg-white/20 backdrop-blur-[2px]"></span>
+                                <span class="absolute size-[110px] rounded-full bg-white flex items-center justify-center shadow-xl">
+                                    <img src="images/icons/play.svg" alt="play" class="size-[70px]">
+                                </span>
+                            </button>
+                            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pointer-events-none">
+                                <p class="text-white text-2xl font-bold">طعم اصیل دوغ آبعلی</p>
+                            </div>
+                        </div>
+                        <div class="video-frame hidden absolute inset-0">
+                            <iframe src="https://www.aparat.com/video/video/embed/videohash/1gzrG/vt/frame" class="w-full h-full" allowFullScreen webkitallowfullscreen mozallowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="embla__slide flex-[0_0_100%] min-w-0 relative h-full">
+                        <div class="video-poster absolute inset-0 cursor-pointer" data-video="2">
+                            <img class="video-thumb absolute inset-0 w-full h-full object-cover opacity-70" src="https://static.cdn.asset.aparat.cloud/avt/45926402-6233-l__1056.jpg?width=900&quality=90&secret=oeI-_TZ77wV70ESIIVc7Zg" alt="ویدیو آبعلی 3">
+                            <div class="absolute inset-0 bg-black/50"></div>
+                            <button class="video-play absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center" aria-label="پخش ویدیو">
+                                <span class="absolute size-[160px] rounded-full bg-white/20 backdrop-blur-[2px]"></span>
+                                <span class="absolute size-[110px] rounded-full bg-white flex items-center justify-center shadow-xl">
+                                    <img src="images/icons/play.svg" alt="play" class="size-[70px]">
+                                </span>
+                            </button>
+                            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pointer-events-none">
+                                <p class="text-white text-2xl font-bold">خاطره‌ای به قدمت چهار نسل</p>
+                            </div>
+                        </div>
+                        <div class="video-frame hidden absolute inset-0">
+                            <iframe src="https://www.aparat.com/video/video/embed/videohash/1gzrG/vt/frame" class="w-full h-full" allowFullScreen webkitallowfullscreen mozallowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- slider arrow -->
-                <div class="flex flex-col gap-[10px]">
-                    <!-- active slide -->
-                    <div class="w-2 h-[76px] bg-abali-darya rounded-lg"></div>
-
-                    <!-- not active slide -->
-                    <div class="w-2 h-[40px] bg-abali-darya/25 rounded-lg cursor-pointer"></div>
-                    <div class="w-2 h-[40px] bg-abali-darya/25 rounded-lg cursor-pointer"></div>
-                </div>
+            </div>
+            <!-- embla dots — dir ltr isolated -->
+            <div class="flex items-center justify-center gap-1.5 mt-4" dir="ltr">
+                <button class="video-dot size-1.5 rounded-full bg-abali-darya/40" data-dot="0" aria-label="ویدیو 1"></button>
+                <button class="video-dot size-1.5 rounded-full bg-abali-darya/40" data-dot="1" aria-label="ویدیو 2"></button>
+                <button class="video-dot w-8 h-1.5 rounded-full bg-abali-darya" data-dot="2" aria-label="ویدیو 3"></button>
             </div>
         </section>
     </main>

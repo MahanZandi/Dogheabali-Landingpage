@@ -156,3 +156,90 @@ body {
     transform: translateX(calc(-50% + 900px)) translateY(-900px) scale(1.4) rotate(24deg);
   }
 }
+
+/* ── Slider: text enter / exit — UI/UX: fade + 14px slide, no blur ── */
+.text-focus-in {
+  will-change: transform, opacity;
+  animation: text-slide-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+#slide-desc.text-focus-in {
+  animation-delay: 70ms;
+}
+
+@keyframes text-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-blur-out {
+  will-change: transform, opacity;
+  animation: text-slide-out 0.35s cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+#slide-desc.text-blur-out {
+  animation-delay: 0ms;
+}
+
+@keyframes text-slide-out {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-focus-in,
+  .text-blur-out {
+    animation-duration: 0.01ms;
+  }
+}
+
+/* ── Slider: image slide up ── */
+.slide-image {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+  will-change: transform, opacity;
+}
+
+.image-slide-up {
+  animation: image-slide-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes image-slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Embla — dir aware (features was custom, video is embla-video) ── */
+.embla,
+.embla-video {
+  overflow: hidden;
+}
+.embla__container {
+  touch-action: pan-y;
+  will-change: transform;
+}
+.embla-video .embla__container {
+  touch-action: pan-x;
+}
+
+/* ── Slider indicator transition ── */
+.slider-indicator {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
