@@ -11,11 +11,11 @@
 
 <body dir="rtl" class="bg-gray-100 min-h-screen overflow-x-hidden">
     <!-- hero -->
-    <header class="bg-abali-darya pb-[147px] rounded-b-[48px]">
+    <header class="bg-abali-darya pb-[147px] max-lg:pb-[110px] max-sm:pb-[80px] rounded-b-[48px] max-lg:rounded-b-[36px] max-sm:rounded-b-[24px]">
         <nav class="container">
             <div class="relative">
                 <div
-                    class="flex justify-between items-center pt-5 pb-6 z-10 relative px-[60px] bg-white rounded-b-[22px]">
+                    class="flex justify-between items-center pt-5 max-lg:pt-4 pb-6 max-lg:pb-5 z-10 relative px-[60px] max-lg:px-6 max-sm:px-4 bg-white rounded-b-[22px]">
                     <div>
                         <!-- animated hamburger menu -->
                         <button id="hamburger"
@@ -31,7 +31,7 @@
                     </div>
 
                     <!-- logo (absolute center) -->
-                    <img class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[60px] w-fit"
+                    <img class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[60px] max-lg:h-[50px] max-sm:h-[40px] w-fit max-w-full"
                         src="images/Logo.svg" alt="دوغ ابعلی">
 
                     <div class="flex gap-[14px]">
@@ -41,13 +41,13 @@
                         </button>
 
                         <button
-                            class="flex rounded-lg gap-2 h-[38px] pl-2 pr-6 bg-abali-darya text-white text-xs font-bold items-center">
+                            class="flex rounded-lg gap-2 max-sm:gap-1.5 h-[38px] max-sm:h-[32px] pl-2 max-sm:pl-1.5 pr-6 max-sm:pr-3 bg-abali-darya text-white text-xs max-sm:text-[10px] font-bold items-center">
                             <span>ثبت نام یا ورود</span>
-                            <img class="size-6" src="images/icons/profile-2user.svg" alt="person icon">
+                            <img class="size-6 max-sm:size-5" src="images/icons/profile-2user.svg" alt="person icon">
                         </button>
                     </div>
                 </div>
-                <div class="h-[105px] relative -top-10 rounded-[22px] pb-4 mx-3 bg-[#345B85]">
+                <div class="h-[105px] max-lg:h-[90px] max-sm:h-[80px] relative -top-10 rounded-[22px] pb-4 mx-3 max-lg:mx-3 max-sm:mx-0 bg-[#345B85]">
                     <nav id="nav-links"
                         class="relative text-base text-white font-semibold flex gap-10 justify-center items-end h-full">
                         <a href="/" class="nav-link relative pb-1"> نظرات شما</a>
@@ -62,45 +62,45 @@
         </nav>
 
         <!-- hero title -->
-        <div class="mt-[75px] flex justify-center relative">
+        <div class="mt-[75px] max-lg:mt-[60px] max-sm:mt-[40px] flex justify-center relative max-sm:px-4">
             <!-- halo 1 (top-right, near "دوغت") -->
             <div
-                class="absolute -top-20 -right-20 w-[411px] h-[411px] rounded-full bg-white/39 blur-[100px] pointer-events-none">
+                class="absolute -top-20 max-lg:-top-16 max-sm:-top-10 -right-20 max-lg:-right-16 max-sm:-right-10 w-[411px] max-lg:w-[300px] max-sm:w-[200px] h-[411px] max-lg:h-[300px] max-sm:h-[200px] rounded-full bg-white/39 blur-[100px] max-lg:blur-[80px] max-sm:blur-[60px] pointer-events-none">
             </div>
 
             <!-- halo 2 (right, near "بنوش") -->
             <div
-                class="absolute top-44 -right-40 w-[411px] h-[411px] rounded-full bg-white/25 blur-[100px] pointer-events-none">
+                class="absolute top-44 max-lg:top-32 max-sm:top-24 -right-40 max-lg:-right-32 max-sm:-right-20 w-[411px] max-lg:w-[300px] max-sm:w-[200px] h-[411px] max-lg:h-[300px] max-sm:h-[200px] rounded-full bg-white/25 blur-[100px] max-lg:blur-[80px] max-sm:blur-[60px] pointer-events-none">
             </div>
 
-            <div class="text-white flex flex-col items-center">
-                <h2 class="px-5 py-[10px] text-[28px] font-medium bg-white/20 rounded-lg w-fit flex gap-2 items-center">
-                    <span> با آبعلی خاطره هات رو به یادماندنی کن </span> <img src="images/icon.png" class="size-8"
+            <div class="text-white flex flex-col items-center text-center">
+                <h2 class="px-5 max-lg:px-4 max-sm:px-3 py-[10px] max-sm:py-2 text-[28px] max-lg:text-[22px] max-sm:text-[16px] font-medium bg-white/20 rounded-lg w-fit flex gap-2 items-center max-w-full">
+                    <span> با آبعلی خاطره هات رو به یادماندنی کن </span> <img src="images/icon.png" class="size-8 max-sm:size-6 max-w-full"
                         alt="">
                 </h2>
 
-                <h2 class="text-[120px] font-black">
+                <h2 class="text-[120px] max-lg:text-[90px] max-md:text-[64px] max-sm:text-[48px] font-black leading-none">
                     دوغـت رو بنــــوش!
                 </h2>
-                <div class="mt-[11px] lg:pr-36 w-full flex gap-3">
-                    <span class="text-white text-2xl">از اینجا بازش کن!</span>
-                    <img src="images/icons/Arrow.png" alt="Arrow">
+                <div class="mt-[11px] lg:pr-36 max-lg:pr-0 w-full flex gap-3 max-sm:gap-2 justify-center lg:justify-start">
+                    <span class="text-white text-2xl max-lg:text-xl max-sm:text-base">از اینجا بازش کن!</span>
+                    <img src="images/icons/Arrow.png" alt="Arrow" class="max-sm:w-16 h-auto">
                 </div>
             </div>
         </div>
 
         <!-- header background -->
-        <div class="mt-[170px] flex justify-center relative">
+        <div class="mt-[170px] max-lg:mt-[120px] max-sm:mt-[80px] flex justify-center relative max-sm:px-4">
             <!-- halo 3 (below yellow bg, left of center item) -->
             <div
-                class="absolute -bottom-40 -left-32 w-[411px] h-[411px] rounded-full bg-white/39 blur-[100px] pointer-events-none">
+                class="absolute -bottom-40 max-lg:-bottom-32 max-sm:-bottom-20 -left-32 max-lg:-left-24 max-sm:-left-16 w-[411px] max-lg:w-[300px] max-sm:w-[200px] h-[411px] max-lg:h-[300px] max-sm:h-[200px] rounded-full bg-white/39 blur-[100px] max-lg:blur-[80px] max-sm:blur-[60px] pointer-events-none">
             </div>
-            <div class="relative">
-                <img src="images/yellow-background.png" alt="yellow-background">
+            <div class="relative max-sm:w-full max-sm:flex max-sm:justify-center">
+                <img src="images/yellow-background.png" alt="yellow-background" class="max-sm:w-[92vw] max-sm:max-w-[420px] max-w-full h-auto">
 
-                <img class="absolute -top-36 -right-10 z-10" src="images/dogh-1.svg" alt="دوغ آبعلی">
-                <div class="relative">
-                    <div class="absolute bottom-28 right-44">
+                <img class="absolute -top-36 max-lg:-top-24 max-sm:-top-16 -right-10 max-lg:-right-6 max-sm:-right-2 z-10 max-lg:w-[180px] max-sm:w-[110px] max-w-full h-auto" src="images/dogh-1.svg" alt="دوغ آبعلی">
+                <div class="relative max-sm:hidden">
+                    <div class="absolute bottom-28 max-lg:bottom-20 max-sm:bottom-10 right-44 max-lg:right-24 max-sm:right-10">
                         <img src="images/Subtract-r.svg" alt="Subtract">
                         <div
                             class="absolute flex items-center justify-center -top-1.5 -left-2 bg-white rounded-full size-[58px]">
@@ -116,8 +116,8 @@
                     </div>
                 </div>
 
-                <img class="absolute -top-56 -left-10 z-10" src="images/dogh-2.svg" alt="دوغ آبعلی">
-                <div class="absolute bottom-28 left-44">
+                <img class="absolute -top-56 max-lg:-top-40 max-sm:-top-24 -left-10 max-lg:-left-6 max-sm:-left-2 z-10 max-lg:w-[180px] max-sm:w-[110px] max-w-full h-auto" src="images/dogh-2.svg" alt="دوغ آبعلی">
+                <div class="absolute bottom-28 max-lg:bottom-20 max-sm:bottom-10 left-44 max-lg:left-24 max-sm:left-10 max-sm:hidden">
                     <img src="images/Subtract-l.svg" alt="Subtract">
                     <div
                         class="absolute flex items-center justify-center -top-1 -right-2 bg-white rounded-full size-[58px]">
@@ -133,8 +133,8 @@
                 </div>
                 <!-- center hero image dogh -->
                 <div id="dogh-animation"
-                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible">
-                    <img id="dogh-main" class="dogh-animated" src="images/dogh.svg" alt="دوغ آبعلی">
+                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible max-lg:w-[280px] max-sm:w-[170px] max-w-full">
+                    <img id="dogh-main" class="dogh-animated w-full max-w-full h-auto" src="images/dogh.svg" alt="دوغ آبعلی">
                     <div id="dogh-frame-2-wrapper" class="hidden relative">
                         <img id="dogh-frame-2" class="dogh-frame-2" src="images/dogh-frame-2.png" alt="دوغ آبعلی">
                         <div id="dogh-steam"
