@@ -11,7 +11,7 @@
 
 <body dir="rtl" class="bg-gray-100 min-h-screen overflow-x-hidden">
     <!-- hero -->
-    <header class="bg-abali-darya pb-[147px] max-lg:pb-[110px] max-sm:pb-[80px] rounded-b-[48px] max-lg:rounded-b-[36px] max-sm:rounded-b-[24px]">
+    <header class="bg-abali-darya pb-[147px] max-lg:pb-[110px] max-sm:pb-[80px] rounded-b-[48px] max-lg:rounded-b-[36px] max-sm:rounded-b-[24px] overflow-hidden">
         <nav class="container">
             <div class="relative">
                 <div
@@ -266,7 +266,85 @@
                 <button class="video-dot w-8 h-1.5 rounded-full bg-abali-darya" data-dot="2" aria-label="ویدیو 3"></button>
             </div>
         </section>
+
     </main>
+
+    <!-- گاز دار / بدون گاز — full bleed bg, container respected -->
+    <section id="gaz-section" class="mt-[90px] mb-[60px] bg-[#EEEEEE] overflow-hidden">
+        <div class="container pt-[166px] pb-[146px] max-lg:pt-[80px] max-lg:pb-[60px] max-sm:pt-[40px] max-sm:pb-[40px]">
+            <!-- tabs -->
+            <div class="flex justify-center">
+                <div class="bg-white rounded-2xl p-2 flex gap-3 sm:gap-4" dir="rtl">
+                    <button data-gaz-tab="bedoon" class="gaz-tab w-[165px] h-[62px] max-sm:w-[130px] max-sm:h-[52px] rounded-xl text-base font-bold transition-colors bg-[#DDE7F0] text-[#4383C4]">بدون گاز</button>
+                    <button data-gaz-tab="gazdar" class="gaz-tab w-[165px] h-[62px] max-sm:w-[130px] max-sm:h-[52px] rounded-xl text-base font-bold transition-colors bg-[#4383C4] text-white">گاز دار</button>
+                </div>
+            </div>
+
+            <h2 class="mt-10 text-center text-[#1e1e1e] text-[36px] max-lg:text-[28px] max-sm:text-[22px] font-black leading-none">نوشیدنی ایرانی برای سلیقه های متفاوت</h2>
+
+            <!-- cazdar products — box overflow-hidden, image half hidden under box, z section bg > dogh, box > bg -->
+            <div id="gazdar-products" class="mt-16 flex flex-wrap justify-center gap-6 lg:gap-8">
+                <div class="group relative w-[288px] h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
+                    <img src="images/dogh-slide-1.svg" alt="دوغ گازدار" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[295px] sm:h-[316px] max-w-[200px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
+                            <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
+                        </button>
+                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+                    </div>
+                </div>
+                <div class="group relative w-[288px] h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
+                    <img src="images/dogh.svg" alt="دوغ خانواده" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[344px] sm:h-[410px] max-w-[220px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
+                            <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
+                        </button>
+                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">دوغ خانواده</span>
+                    </div>
+                </div>
+                <div class="group relative w-[288px] h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
+                    <img src="images/dogh-slide-3.svg" alt="دوغ قوطی" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[328px] sm:h-[377px] max-w-[178px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
+                            <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
+                        </button>
+                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- bedoon products (hidden) — same half-under hover, box > section bg -->
+            <div id="bedoon-products" class="hidden mt-16 flex flex-wrap justify-center gap-6 lg:gap-8">
+                <div class="group gaz-card relative w-[288px] h-[317px] rounded-[32px] flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
+                    <img src="images/dogh.svg" alt="دوغ بدون گاز" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[344px] sm:h-[410px] max-w-[220px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
+                            <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
+                        </button>
+                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+                    </div>
+                </div>
+                <div class="group gaz-card relative w-[288px] h-[317px] rounded-[32px] flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
+                    <img src="images/dogh-slide-3.svg" alt="دوغ بدون گاز" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[328px] sm:h-[377px] max-w-[178px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
+                            <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
+                        </button>
+                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">دوغ بدون گاز</span>
+                    </div>
+                </div>
+                <div class="group relative w-[288px] h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
+                    <img src="images/dogh-slide-1.svg" alt="دوغ بدون گاز" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[295px] sm:h-[316px] max-w-[200px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                        <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
+                            <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
+                        </button>
+                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
 
     <script type="module" src="/src/main.js"></script>
 </body>

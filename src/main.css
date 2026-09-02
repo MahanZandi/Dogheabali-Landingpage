@@ -239,6 +239,12 @@ body {
   touch-action: pan-x;
 }
 
+/* ── Gaz cards: bottom hidden, top visible (no stretch) ── */
+.gaz-card {
+  /* bottom 0 = hide half under, top -120 = allow 120px overflow visible */
+  clip-path: inset(-120px 0 0 0 round 32px);
+}
+
 /* ── Slider indicator transition ── */
 .slider-indicator {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);

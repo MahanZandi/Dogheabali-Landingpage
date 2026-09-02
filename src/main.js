@@ -251,3 +251,28 @@ document.querySelectorAll('.video-thumb').forEach((thumb) => {
   tv.addEventListener('error', () => tv.remove());
   tv.load();
 });
+
+// ── گاز دار / بدون گاز tabs (165x62, #4383C4 / #DDE7F0) ──
+const gazTabs = document.querySelectorAll('.gaz-tab');
+const gazdarProducts = document.getElementById('gazdar-products');
+const bedoonProducts = document.getElementById('bedoon-products');
+
+gazTabs.forEach((tab) => {
+  tab.addEventListener('click', () => {
+    const target = tab.dataset.gazTab;
+    const isGazdar = target === 'gazdar';
+
+    gazTabs.forEach((t) => {
+      const active = t.dataset.gazTab === target;
+      t.classList.toggle('bg-[#4383C4]', active);
+      t.classList.toggle('text-white', active);
+      t.classList.toggle('bg-[#DDE7F0]', !active);
+      t.classList.toggle('text-[#4383C4]', !active);
+    });
+
+    gazdarProducts?.classList.toggle('hidden', !isGazdar);
+    gazdarProducts?.classList.toggle('flex', isGazdar);
+    bedoonProducts?.classList.toggle('hidden', isGazdar);
+    bedoonProducts?.classList.toggle('flex', !isGazdar);
+  });
+});
