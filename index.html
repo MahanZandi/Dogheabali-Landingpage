@@ -157,29 +157,29 @@
     <main class="container flex flex-col">
 
         <!-- features section -->
-        <section id="features-slider-wrapper" class="h-[220vh] relative">
+        <section id="features-slider-wrapper" class="h-[220vh] max-lg:h-auto relative">
             <div id="features-slider"
-                class="sticky top-0 h-screen py-[124px] overflow-hidden flex justify-between items-center">
-                <div class="flex flex-col gap-[42px] justify-center max-w-[520px]">
+                class="sticky max-lg:static top-0 h-screen max-lg:h-auto py-[124px] max-lg:py-12 overflow-hidden max-lg:overflow-visible flex max-lg:flex-col justify-between max-lg:justify-center items-center max-lg:gap-8">
+                <div class="flex flex-col gap-6 lg:gap-[42px] justify-center max-w-[520px] max-lg:max-w-full max-lg:text-center max-lg:items-center">
                     <span id="slide-tag"
-                        class="text-[32px] font-bold w-fit bg-abali-zafaran py-2 px-3 rounded-md text-[#0E0E0E]">ویژگی
+                        class="text-[22px] lg:text-[32px] font-bold w-fit bg-abali-zafaran py-2 px-3 rounded-md text-[#0E0E0E]">ویژگی
                         های
                         دوغ آبعلی</span>
-                    <span id="slide-title" class="text-abali-darya font-black text-[52px] text-focus-in">اصیل ترین
+                    <span id="slide-title" class="text-abali-darya font-black text-[28px] lg:text-[52px] text-focus-in">اصیل ترین
                         نوشیدنی ایرانی</span>
-                    <span id="slide-desc" class="max-w-[478px] text-2xl font-light text-[#0E0E0E] text-focus-in"
+                    <span id="slide-desc" class="max-w-[478px] text-lg lg:text-2xl font-light text-[#0E0E0E] text-focus-in"
                         style="animation-delay: 70ms">70 کیلو کالری ، 3.5 گرم پروتئین ، : 7.6
                         گرم کربوهیدرات ، 3 گرم چربی</span>
                 </div>
 
                 <div class="flex gap-[40px] items-center">
 
-                    <div class="size-[511px] relative">
+                    <div class="size-[511px] max-lg:size-[360px] max-sm:size-[280px] relative">
                         <!-- background -->
                         <div class="bg-abali-darya w-full h-full rounded-full"></div>
 
                         <!-- slides stack (custom sticky, no embla) -->
-                        <div id="slides-track" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] h-[640px] overflow-hidden">
+                        <div id="slides-track" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[360px] max-lg:w-[260px] max-sm:w-[190px] h-[640px] max-lg:h-[400px] max-sm:h-[310px] overflow-hidden">
                             <img class="slide-image absolute inset-0 w-full h-full object-contain opacity-100" src="images/DOGH-BA-STAND.png" alt="دوغ آبعلی" data-index="0">
                             <img class="slide-image absolute inset-0 w-full h-full object-contain opacity-0 pointer-events-none translate-y-full" src="images/DOGH-BA-STAND-2.png" alt="دوغ آبعلی" data-index="1">
                             <img class="slide-image absolute inset-0 w-full h-full object-contain opacity-0 pointer-events-none translate-y-full" src="images/DOGH-BA-STAND-3.png" alt="دوغ آبعلی" data-index="2">
@@ -201,16 +201,16 @@
 
         <!-- video — embla slider, dir isolated, rounded 73px h 636px -->
         <section class="py-10">
-            <div class="embla-video relative h-[636px] rounded-[73px] overflow-hidden bg-black" dir="ltr">
+            <div class="embla-video relative h-[636px] max-lg:h-[400px] max-sm:h-[280px] rounded-[73px] max-lg:rounded-[40px] max-sm:rounded-[24px] overflow-hidden bg-black" dir="ltr">
                 <div class="embla__container flex h-full">
                     <div class="embla__slide flex-[0_0_100%] min-w-0 relative h-full">
                         <div class="video-poster absolute inset-0 cursor-pointer" data-video="0">
                             <img class="video-thumb absolute inset-0 w-full h-full object-cover opacity-70" src="https://static.cdn.asset.aparat.cloud/avt/45926402-6233-l__1056.jpg?width=900&quality=90&secret=oeI-_TZ77wV70ESIIVc7Zg" alt="ویدیو آبعلی">
                             <div class="absolute inset-0 bg-black/50"></div>
                             <button class="video-play absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center" aria-label="پخش ویدیو">
-                                <span class="absolute size-[160px] rounded-full bg-white/20 backdrop-blur-[2px]"></span>
-                                <span class="absolute size-[110px] rounded-full bg-white flex items-center justify-center shadow-xl">
-                                    <img src="images/icons/play.svg" alt="play" class="size-[70px]">
+                                <span class="absolute size-[160px] max-lg:size-[110px] max-sm:size-[80px] rounded-full bg-white/20 backdrop-blur-[2px]"></span>
+                                <span class="absolute size-[110px] max-lg:size-[80px] max-sm:size-[60px] rounded-full bg-white flex items-center justify-center shadow-xl">
+                                    <img src="images/icons/play.svg" alt="play" class="size-[70px] max-lg:size-[50px] max-sm:size-[36px]">
                                 </span>
                             </button>
                             <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pointer-events-none">
@@ -226,9 +226,9 @@
                             <img class="video-thumb absolute inset-0 w-full h-full object-cover opacity-70" src="https://static.cdn.asset.aparat.cloud/avt/45926402-6233-l__1056.jpg?width=900&quality=90&secret=oeI-_TZ77wV70ESIIVc7Zg" alt="ویدیو آبعلی 2">
                             <div class="absolute inset-0 bg-black/50"></div>
                             <button class="video-play absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center" aria-label="پخش ویدیو">
-                                <span class="absolute size-[160px] rounded-full bg-white/20 backdrop-blur-[2px]"></span>
-                                <span class="absolute size-[110px] rounded-full bg-white flex items-center justify-center shadow-xl">
-                                    <img src="images/icons/play.svg" alt="play" class="size-[70px]">
+                                <span class="absolute size-[160px] max-lg:size-[110px] max-sm:size-[80px] rounded-full bg-white/20 backdrop-blur-[2px]"></span>
+                                <span class="absolute size-[110px] max-lg:size-[80px] max-sm:size-[60px] rounded-full bg-white flex items-center justify-center shadow-xl">
+                                    <img src="images/icons/play.svg" alt="play" class="size-[70px] max-lg:size-[50px] max-sm:size-[36px]">
                                 </span>
                             </button>
                             <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pointer-events-none">
@@ -244,9 +244,9 @@
                             <img class="video-thumb absolute inset-0 w-full h-full object-cover opacity-70" src="https://static.cdn.asset.aparat.cloud/avt/45926402-6233-l__1056.jpg?width=900&quality=90&secret=oeI-_TZ77wV70ESIIVc7Zg" alt="ویدیو آبعلی 3">
                             <div class="absolute inset-0 bg-black/50"></div>
                             <button class="video-play absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center" aria-label="پخش ویدیو">
-                                <span class="absolute size-[160px] rounded-full bg-white/20 backdrop-blur-[2px]"></span>
-                                <span class="absolute size-[110px] rounded-full bg-white flex items-center justify-center shadow-xl">
-                                    <img src="images/icons/play.svg" alt="play" class="size-[70px]">
+                                <span class="absolute size-[160px] max-lg:size-[110px] max-sm:size-[80px] rounded-full bg-white/20 backdrop-blur-[2px]"></span>
+                                <span class="absolute size-[110px] max-lg:size-[80px] max-sm:size-[60px] rounded-full bg-white flex items-center justify-center shadow-xl">
+                                    <img src="images/icons/play.svg" alt="play" class="size-[70px] max-lg:size-[50px] max-sm:size-[36px]">
                                 </span>
                             </button>
                             <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 pointer-events-none">
@@ -270,7 +270,7 @@
     </main>
 
     <!-- گاز دار / بدون گاز — full bleed bg, container respected -->
-    <section id="gaz-section" class="mt-[90px] mb-[60px] bg-[#EEEEEE] overflow-hidden">
+    <section id="gaz-section" class="mt-[90px] mb-0 bg-[#EEEEEE] overflow-hidden">
         <div class="container pt-[166px] pb-[146px] max-lg:pt-[80px] max-lg:pb-[60px] max-sm:pt-[40px] max-sm:pb-[40px]">
             <!-- tabs -->
             <div class="flex justify-center">
@@ -299,7 +299,7 @@
                         <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
                             <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
                         </button>
-                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">دوغ خانواده</span>
+                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
                     </div>
                 </div>
                 <div class="group relative w-[288px] h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
@@ -330,7 +330,7 @@
                         <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
                             <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
                         </button>
-                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">دوغ بدون گاز</span>
+                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
                     </div>
                 </div>
                 <div class="group relative w-[288px] h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
@@ -345,6 +345,31 @@
             </div>
         </div>
         </section>
+
+    <!-- stats — white bg correctly placed, box #4383C4 rounded 34 py44, numbers 64 FaNum Bold, pt173 (113+60 gap) pb127 -->
+    <section id="stats-section" class="bg-white pt-[173px] pb-[127px]">
+        <div class="container">
+            <div class="relative">
+                <!-- faint under left -->
+                <div class="absolute inset-0 translate-y-3 -translate-x-3 bg-[#4383C4]/[0.24] rounded-[34px]"></div>
+                <!-- main box -->
+                <div class="relative bg-[#4383C4] rounded-[34px] py-[44px] px-6 sm:px-10 flex flex-col sm:flex-row justify-around items-center gap-8 sm:gap-4 text-white text-center">
+                    <div class="flex flex-col items-center">
+                        <span class="stat-number font-black leading-none text-[40px] sm:text-[48px] lg:text-[64px]" style="font-family:'BonyadeKoodakFaNum'" data-target="91" data-suffix="%">۰</span>
+                        <span class="mt-3 text-[18px] sm:text-[24px] lg:text-[32px] font-light">رضایت مصرف کننده</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="stat-number font-black leading-none text-[40px] sm:text-[48px] lg:text-[64px]" style="font-family:'BonyadeKoodakFaNum'" data-target="100" data-suffix="%">۰</span>
+                        <span class="mt-3 text-[18px] sm:text-[24px] lg:text-[32px] font-light">موجود در سراسر کشور</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="stat-number font-black leading-none text-[40px] sm:text-[48px] lg:text-[64px]" style="font-family:'BonyadeKoodakFaNum'" data-target="31" data-suffix="">۰</span>
+                        <span class="mt-3 text-[18px] sm:text-[24px] lg:text-[32px] font-light">سال اعتبار در کنار شما</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script type="module" src="/src/main.js"></script>
 </body>

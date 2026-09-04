@@ -147,6 +147,8 @@ let programmaticTimer = null;
 
 function onSliderScroll() {
   if (!slider.wrapper || isProgrammaticScroll) return;
+  // On mobile (lg↓) sticky disabled → no scroll-driven change
+  if (window.matchMedia('(max-width: 1024px)').matches) return;
   const rect = slider.wrapper.getBoundingClientRect();
   const vh = window.innerHeight;
   const scrolled = -rect.top;
@@ -165,6 +167,11 @@ slider.indicators.forEach((ind) => {
   ind.addEventListener('click', () => {
     const target = Number(ind.dataset.slide);
     if (target === slider.current || !slider.wrapper) return;
+    // Mobile: just update, no sticky scroll sync
+    if (window.matchMedia('(max-width: 1024px)').matches) {
+      updateSlider(target);
+      return;
+    }
     isProgrammaticScroll = true;
     clearTimeout(programmaticTimer);
     updateSlider(target);
@@ -276,3 +283,34 @@ gazTabs.forEach((tab) => {
     bedoonProducts?.classList.toggle('flex', !isGazdar);
   });
 });
+
+// ── Stats count-up once on enter viewport (BonyadeKoodakFaNum 64px/32px) ──
+const statsSection = document.getElementById('stats-section');
+const statNumbers = document.querySelectorAll('.stat-number');
+let statsAnimated = false;
+function animateStats() {
+  if (statsAnimated) return;
+  statsAnimated = true;
+  statNumbers.forEach((el) => {
+    const target = Number(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    const duration = 1400;
+    const start = performance.now();
+    const toFa = (n) => n.toLocaleString('fa-IR');
+    function step(now) {
+      const p = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const val = Math.floor(eased * target);
+      el.textContent = toFa(val) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = toFa(target) + suffix;
+    }
+    requestAnimationFrame(step);
+  });
+}
+if (statsSection && statNumbers.length) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { animateStats(); io.disconnect(); } });
+  }, { threshold: 0.4 });
+  io.observe(statsSection);
+}
