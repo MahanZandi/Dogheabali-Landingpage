@@ -32,6 +32,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'BonyadeKoodakFaNum';
+  src: url('../fonts/BonyadeKoodakFaNum-Black.woff') format('woff');
+  font-weight: 900;
+  font-display: swap;
+}
+
 /* ── Base defaults ── */
 html {
   scroll-behavior: smooth;
