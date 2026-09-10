@@ -263,3 +263,35 @@ body {
 .slider-indicator {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* ── Comments fade (override Embla slide movement) ── */
+.embla-comments .embla__container {
+  display: block !important;
+  position: relative;
+  height: 100%;
+  touch-action: auto;
+  will-change: auto;
+}
+.embla-comments .embla__slide {
+  position: absolute !important;
+  inset: 0 !important;
+  flex: none !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  will-change: opacity;
+  z-index: 0;
+}
+.embla-comments .embla__slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+@media (prefers-reduced-motion: reduce) {
+  .embla-comments .embla__slide {
+    transition: none;
+  }
+}

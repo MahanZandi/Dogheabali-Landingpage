@@ -316,14 +316,14 @@ if (statsSection && statNumbers.length) {
   io.observe(statsSection);
 }
 
-// ── Comments Embla 337x439 vertical top->bottom, dots inside, west higher ──
-const emblaCommentsNode = document.querySelector('.embla-comments');
-const emblaComments = emblaCommentsNode ? EmblaCarousel(emblaCommentsNode, { axis: 'y', direction: 'ltr', loop: true, align: 'start' }) : null;
+// ── Comments fade 337x439, dots inside, west higher ──
 const regionBrasil = document.getElementById('region-brasil');
 const regionChinase = document.getElementById('region-chinase');
 const pinSouth = document.getElementById('pin-south');
 const pinNorth = document.getElementById('pin-north');
 const commentsDots = document.querySelectorAll('.comments-dot');
+const commentsSlides = document.querySelectorAll('.embla-comments .embla__slide');
+let commentsCurrent = 0;
 function syncMap(idx) {
   const isSouth = idx === 0;
   const isNorth = idx === 1;
@@ -358,17 +358,25 @@ function syncCommentsDots(idx) {
     d.style.height = '8px';
   });
 }
-if (emblaComments) {
-  emblaComments.on('select', () => {
-    const idx = emblaComments.selectedScrollSnap();
-    syncMap(idx);
-    syncCommentsDots(idx);
+function setCommentSlide(idx) {
+  if (!commentsSlides.length) return;
+  const next = ((idx % commentsSlides.length) + commentsSlides.length) % commentsSlides.length;
+  if (next === commentsCurrent && commentsSlides[next]?.classList.contains('is-active')) return;
+  commentsSlides.forEach((slide,i)=>{
+    slide.classList.toggle('is-active', i===next);
   });
+  syncMap(next);
+  syncCommentsDots(next);
+  commentsCurrent = next;
+}
+// init fade state
+if (commentsSlides.length) {
+  commentsSlides.forEach((slide,i)=> slide.classList.toggle('is-active', i===0));
   syncMap(0);
   syncCommentsDots(0);
 }
 commentsDots.forEach((d)=>{
-  d.addEventListener('click', ()=> emblaComments?.scrollTo(Number(d.dataset.slide)));
+  d.addEventListener('click', ()=> setCommentSlide(Number(d.dataset.slide)));
 });
-document.getElementById('comments-prev')?.addEventListener('click', () => emblaComments?.scrollPrev());
-document.getElementById('comments-next')?.addEventListener('click', () => emblaComments?.scrollNext());
+document.getElementById('comments-prev')?.addEventListener('click', () => setCommentSlide(commentsCurrent - 1));
+document.getElementById('comments-next')?.addEventListener('click', () => setCommentSlide(commentsCurrent + 1));
