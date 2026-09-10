@@ -172,7 +172,7 @@
                         گرم کربوهیدرات ، 3 گرم چربی</span>
                 </div>
 
-                <div class="flex gap-[40px] items-center">
+                <div class="flex flex-col items-center gap-4">
 
                     <div class="size-[511px] max-lg:size-[360px] max-sm:size-[280px] relative">
                         <!-- background -->
@@ -186,14 +186,11 @@
                         </div>
                     </div>
 
-                    <!-- slider indicators -->
-                    <div class="flex flex-col gap-[10px]">
-                        <button class="slider-indicator w-2 h-[76px] bg-abali-darya rounded-lg" data-slide="0"
-                            aria-label="اسلاید 1"></button>
-                        <button class="slider-indicator w-2 h-[40px] bg-abali-darya/25 rounded-lg" data-slide="1"
-                            aria-label="اسلاید 2"></button>
-                        <button class="slider-indicator w-2 h-[40px] bg-abali-darya/25 rounded-lg" data-slide="2"
-                            aria-label="اسلاید 3"></button>
+                    <!-- slider indicators — horizontal fixed under circle 65x8 / 10x8 -->
+                    <div class="flex flex-row gap-2 items-center justify-center">
+                        <button class="slider-indicator w-[65px] h-[8px] bg-abali-darya rounded-full" data-slide="0" aria-label="اسلاید 1"></button>
+                        <button class="slider-indicator w-[10px] h-[8px] bg-abali-darya/25 rounded-full" data-slide="1" aria-label="اسلاید 2"></button>
+                        <button class="slider-indicator w-[10px] h-[8px] bg-abali-darya/25 rounded-full" data-slide="2" aria-label="اسلاید 3"></button>
                     </div>
                 </div>
             </div>
@@ -284,7 +281,7 @@
 
             <!-- cazdar products — box overflow-hidden, image half hidden under box, z section bg > dogh, box > bg -->
             <div id="gazdar-products" class="mt-16 flex flex-wrap justify-center gap-6 lg:gap-8">
-                <div class="group relative w-[288px] h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
+                <div class="group relative w-[288px] hover:bg-abali-darya h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
                     <img src="images/dogh-slide-1.svg" alt="دوغ گازدار" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[295px] sm:h-[316px] max-w-[200px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
                     <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                         <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
@@ -293,7 +290,7 @@
                         <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
                     </div>
                 </div>
-                <div class="group relative w-[288px] h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
+                <div class="group relative w-[288px] hover:bg-abali-darya h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
                     <img src="images/dogh.svg" alt="دوغ خانواده" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[344px] sm:h-[410px] max-w-[220px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
                     <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                         <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
@@ -302,7 +299,7 @@
                         <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
                     </div>
                 </div>
-                <div class="group relative w-[288px] h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
+                <div class="group relative w-[288px] hover:bg-abali-darya h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
                     <img src="images/dogh-slide-3.svg" alt="دوغ قوطی" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[328px] sm:h-[377px] max-w-[178px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
                     <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
                         <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
@@ -371,7 +368,7 @@
         </div>
     </section>
 
-    <section class="container py-[46px] justify-between flex items-center gap-[100px]">
+    <section class="container pt-[46px] pb-[94px] justify-between flex items-center gap-[100px]">
         <div class="h-[430px] w-[587px] relative">
             <div class="flex flex-col justify-center items-center text-white absolute -left-8 -top-2 w-[164px] h-[96px] rounded-[23px] bg-abali-darya">
                 <span class="font-black text-[38px]" style="font-family:'BonyadeKoodakFaNum'">100%</span>
@@ -387,6 +384,87 @@
             <div class="flex gap-[18px] h-20">
                 <button class="font-bold rounded-[19px] w-full text-2xl text-white bg-abali-darya">ثبت سفارش</button>
                 <button class="font-bold rounded-[19px] w-full text-2xl text-abali-darya bg-abali-darya/15">دربـــاره مــا</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- نظرات — نقشه 575 دایره پشت، 609.3 ارتفاع، gap 82 با باکس — Embla vertical 337x439 -->
+    <section class="bg-white py-12">
+        <div class="container flex flex-col items-center">
+            <span class="px-6 py-2 bg-[#DDE7F0] text-[#4383C4] rounded-lg text-sm font-bold">نظرات شما</span>
+            <h2 class="mt-4 text-[28px] lg:text-[36px] font-black text-[#1e1e1e] text-center">آبعلی ، برای تمام اقوام ایران</h2>
+
+            <div dir="ltr" class="mt-12 flex flex-col lg:flex-row gap-12 lg:gap-[82px] items-center justify-center w-full">
+                <!-- باکس نظرات — چپ — Embla vertical 337x439, dots inside, text right -->
+                <div class="relative w-[337px] h-[439px] shrink-0">
+                    <div class="absolute inset-0 translate-y-2 bg-[#FDE6A8] rounded-2xl"></div>
+                    <div class="embla-comments relative w-[337px] h-[439px] overflow-hidden rounded-2xl bg-white shadow-sm" dir="ltr">
+                        <div class="embla__container flex flex-col h-full">
+                            <div class="embla__slide flex-[0_0_100%] min-w-0 flex flex-col">
+                                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=280&fit=crop" alt="نظر" class="w-full h-[220px] object-cover shrink-0">
+                                <div class="flex-1 bg-[#FDC939] p-5 flex flex-col gap-3 justify-center text-right" dir="rtl">
+                                    <h3 class="font-bold text-[#1e1e1e] text-base text-right">توی یک ظهر گرم تابستونی..</h3>
+                                    <p class="text-[#1e1e1e]/80 text-sm leading-relaxed text-right">دوغ آبعلی توی یک ظهر گرم تابستونی خیلی میچسبه !</p>
+                                </div>
+                            </div>
+                            <div class="embla__slide flex-[0_0_100%] min-w-0 flex flex-col">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=280&fit=crop" alt="نظر" class="w-full h-[220px] object-cover shrink-0">
+                                <div class="flex-1 bg-[#FDC939] p-5 flex flex-col gap-3 justify-center text-right" dir="rtl">
+                                    <h3 class="font-bold text-[#1e1e1e] text-base text-right">همراه همیشگی سفره</h3>
+                                    <p class="text-[#1e1e1e]/80 text-sm leading-relaxed text-right">طعم اصیل آبعلی هر جا همراه ماست، از شمال تا جنوب.</p>
+                                </div>
+                            </div>
+                            <div class="embla__slide flex-[0_0_100%] min-w-0 flex flex-col">
+                                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=280&fit=crop" alt="نظر" class="w-full h-[220px] object-cover shrink-0">
+                                <div class="flex-1 bg-[#FDC939] p-5 flex flex-col gap-3 justify-center text-right" dir="rtl">
+                                    <h3 class="font-bold text-[#1e1e1e] text-base text-right">غرب، همیشه همراه</h3>
+                                    <p class="text-[#1e1e1e]/80 text-sm leading-relaxed text-right">طعم غرب، یادآور خاطره‌های ناب آبعلی.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- dots inside box -->
+                        <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 items-center z-10">
+                            <button class="comments-dot w-[65px] h-[8px] bg-white rounded-full" data-slide="0" aria-label="اسلاید 1"></button>
+                            <button class="comments-dot w-[10px] h-[8px] bg-white/60 rounded-full" data-slide="1" aria-label="اسلاید 2"></button>
+                            <button class="comments-dot w-[10px] h-[8px] bg-white/60 rounded-full" data-slide="2" aria-label="اسلاید 3"></button>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mt-4 justify-center">
+                        <button id="comments-prev" class="size-9 rounded-full bg-[#FDC939] flex items-center justify-center" aria-label="قبلی">
+                            <img src="images/icons/Arrow-yellow-slider.svg" alt="up" class="size-4 rotate-180">
+                        </button>
+                        <button id="comments-next" class="size-9 rounded-full bg-[#FDC939] flex items-center justify-center" aria-label="بعدی">
+                            <img src="images/icons/Arrow-yellow-slider.svg" alt="down" class="size-4">
+                        </button>
+                    </div>
+                </div>
+
+                <!-- نقشه — راست — دایره 575 + map 609.3 + منطقه با انیمیشن -->
+                <div class="relative w-[320px] h-[320px] sm:w-[450px] sm:h-[450px] lg:w-[575px] lg:h-[575px] shrink-0 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-[#EAF0F8] rounded-full"></div>
+                    <img src="images/map.svg" alt="نقشه ایران" class="relative w-full h-[609.3px] max-lg:h-[450px] max-sm:h-[320px] object-contain z-10">
+                    <img id="region-brasil" src="images/Brasil.svg" alt="جنوب" class="absolute z-10 w-[20%] h-auto bottom-[18%] left-[48%] -translate-x-1/2 transition-all duration-500">
+                    <img id="region-chinase" src="images/Chinase.svg" alt="شمال" class="absolute z-10 w-[32%] h-auto top-[22%] left-[42%] -translate-x-1/2 opacity-0 scale-90 transition-all duration-500">
+                    <img id="region-west" src="images/Brasil.svg" alt="غرب" class="absolute z-10 w-[22%] h-auto top-[32%] left-[24%] -translate-x-1/2 opacity-0 scale-90 transition-all duration-500">
+                    <div id="pin-south" class="absolute z-20 bottom-[22%] left-[52%] -translate-x-1/2 flex flex-col items-center transition-all duration-500">
+                        <div class="size-[48px] sm:size-[56px] rounded-full bg-[#FDC939] p-1 shadow-md flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100&h=100&fit=crop&crop=face" alt="جنوب" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <span class="mt-1 bg-white text-[#1e1e1e] text-xs font-bold px-3 py-1 rounded-full shadow">جنوب</span>
+                    </div>
+                    <div id="pin-north" class="absolute z-20 top-[26%] left-[46%] -translate-x-1/2 flex flex-col items-center opacity-0 scale-90 transition-all duration-500 pointer-events-none">
+                        <div class="size-[48px] sm:size-[56px] rounded-full bg-[#FDC939] p-1 shadow-md flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="شمال" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <span class="mt-1 bg-white text-[#1e1e1e] text-xs font-bold px-3 py-1 rounded-full shadow">شمال</span>
+                    </div>
+                    <div id="pin-west" class="absolute z-20 top-[38%] left-[28%] -translate-x-1/2 flex flex-col items-center opacity-0 scale-90 transition-all duration-500 pointer-events-none">
+                        <div class="size-[48px] sm:size-[56px] rounded-full bg-[#FDC939] p-1 shadow-md flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=100&h=100&fit=crop&crop=face" alt="غرب" class="w-full h-full rounded-full object-cover">
+                        </div>
+                        <span class="mt-1 bg-white text-[#1e1e1e] text-xs font-bold px-3 py-1 rounded-full shadow">غرب</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

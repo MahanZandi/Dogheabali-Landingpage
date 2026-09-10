@@ -137,7 +137,8 @@ function updateSlider(target) {
     const active = idx === next;
     ind.classList.toggle('bg-abali-darya', active);
     ind.classList.toggle('bg-abali-darya/25', !active);
-    ind.style.height = active ? '76px' : '40px';
+    ind.style.width = active ? '65px' : '10px';
+    ind.style.height = '8px';
   });
   slider.current = next;
 }
@@ -314,3 +315,60 @@ if (statsSection && statNumbers.length) {
   }, { threshold: 0.4 });
   io.observe(statsSection);
 }
+
+// ── Comments Embla 337x439 vertical top->bottom, dots inside, west higher ──
+const emblaCommentsNode = document.querySelector('.embla-comments');
+const emblaComments = emblaCommentsNode ? EmblaCarousel(emblaCommentsNode, { axis: 'y', direction: 'ltr', loop: true, align: 'start' }) : null;
+const regionBrasil = document.getElementById('region-brasil');
+const regionChinase = document.getElementById('region-chinase');
+const pinSouth = document.getElementById('pin-south');
+const pinNorth = document.getElementById('pin-north');
+const commentsDots = document.querySelectorAll('.comments-dot');
+function syncMap(idx) {
+  const isSouth = idx === 0;
+  const isNorth = idx === 1;
+  const isWest = idx === 2;
+  const regionWest = document.getElementById('region-west');
+  const pinWest = document.getElementById('pin-west');
+  regionBrasil?.classList.toggle('opacity-0', !isSouth);
+  regionBrasil?.classList.toggle('scale-90', !isSouth);
+  regionBrasil?.classList.toggle('opacity-100', isSouth);
+  regionChinase?.classList.toggle('opacity-0', !isNorth);
+  regionChinase?.classList.toggle('scale-90', !isNorth);
+  regionChinase?.classList.toggle('opacity-100', isNorth);
+  regionWest?.classList.toggle('opacity-0', !isWest);
+  regionWest?.classList.toggle('scale-90', !isWest);
+  regionWest?.classList.toggle('opacity-100', isWest);
+  pinSouth?.classList.toggle('opacity-0', !isSouth);
+  pinSouth?.classList.toggle('scale-90', !isSouth);
+  pinSouth?.classList.toggle('pointer-events-none', !isSouth);
+  pinNorth?.classList.toggle('opacity-0', !isNorth);
+  pinNorth?.classList.toggle('scale-90', !isNorth);
+  pinNorth?.classList.toggle('pointer-events-none', !isNorth);
+  pinWest?.classList.toggle('opacity-0', !isWest);
+  pinWest?.classList.toggle('scale-90', !isWest);
+  pinWest?.classList.toggle('pointer-events-none', !isWest);
+}
+function syncCommentsDots(idx) {
+  commentsDots.forEach((d,i)=>{
+    const active = i===idx;
+    d.classList.toggle('bg-white', active);
+    d.classList.toggle('bg-white/60', !active);
+    d.style.width = active ? '65px' : '10px';
+    d.style.height = '8px';
+  });
+}
+if (emblaComments) {
+  emblaComments.on('select', () => {
+    const idx = emblaComments.selectedScrollSnap();
+    syncMap(idx);
+    syncCommentsDots(idx);
+  });
+  syncMap(0);
+  syncCommentsDots(0);
+}
+commentsDots.forEach((d)=>{
+  d.addEventListener('click', ()=> emblaComments?.scrollTo(Number(d.dataset.slide)));
+});
+document.getElementById('comments-prev')?.addEventListener('click', () => emblaComments?.scrollPrev());
+document.getElementById('comments-next')?.addEventListener('click', () => emblaComments?.scrollNext());
