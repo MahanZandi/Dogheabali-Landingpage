@@ -268,7 +268,7 @@
 
     <!-- گاز دار / بدون گاز — full bleed bg, container respected -->
     <section id="gaz-section" class="mt-[90px] mb-0 bg-[#EEEEEE] overflow-hidden">
-        <div class="container pt-[166px] pb-[146px] max-lg:pt-[80px] max-lg:pb-[60px] max-sm:pt-[40px] max-sm:pb-[40px]">
+        <div class="container pt-[166px] pb-[146px] max-lg:pt-[80px] max-lg:pb-[60px] max-sm:pt-[40px] max-sm:pb-[24px]">
             <!-- tabs -->
             <div class="flex justify-center">
                 <div class="bg-white rounded-2xl p-2 flex gap-3 sm:gap-4" dir="rtl">
@@ -279,64 +279,80 @@
 
             <h2 class="mt-10 text-center text-[#1e1e1e] text-[36px] max-lg:text-[28px] max-sm:text-[22px] font-black leading-none">نوشیدنی ایرانی برای سلیقه های متفاوت</h2>
 
-            <!-- cazdar products — box overflow-hidden, image half hidden under box, z section bg > dogh, box > bg -->
-            <div id="gazdar-products" class="mt-16 flex flex-wrap justify-center gap-6 lg:gap-8">
-                <div class="group relative w-[288px] hover:bg-abali-darya h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
-                    <img src="images/dogh-slide-1.svg" alt="دوغ گازدار" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[295px] sm:h-[316px] max-w-[200px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
-                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                        <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
-                            <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
-                        </button>
-                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+            <!-- cazdar products — desktop grid, mobile scale slider (autoplay) -->
+            <div id="gazdar-products" class="embla-gaz mt-16">
+                <div class="embla__container">
+                    <div class="embla__slide">
+                        <div class="group relative w-[288px] max-sm:w-[240px] hover:bg-abali-darya h-[317px] max-sm:h-[280px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
+                            <img src="images/dogh-slide-1.svg" alt="دوغ گازدار" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[295px] sm:h-[316px] max-w-[200px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
+                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
+                                    <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
+                                </button>
+                                <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="group relative w-[288px] hover:bg-abali-darya h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
-                    <img src="images/dogh.svg" alt="دوغ خانواده" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[344px] sm:h-[410px] max-w-[220px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
-                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                        <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
-                            <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
-                        </button>
-                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+                    <div class="embla__slide">
+                        <div class="group relative w-[288px] max-sm:w-[240px] hover:bg-abali-darya h-[317px] max-sm:h-[280px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
+                            <img src="images/dogh.svg" alt="دوغ خانواده" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[344px] sm:h-[410px] max-w-[220px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
+                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
+                                    <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
+                                </button>
+                                <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="group relative w-[288px] hover:bg-abali-darya h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
-                    <img src="images/dogh-slide-3.svg" alt="دوغ قوطی" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[328px] sm:h-[377px] max-w-[178px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
-                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                        <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
-                            <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
-                        </button>
-                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+                    <div class="embla__slide">
+                        <div class="group relative w-[288px] max-sm:w-[240px] hover:bg-abali-darya h-[317px] max-sm:h-[280px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
+                            <img src="images/dogh-slide-3.svg" alt="دوغ قوطی" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[328px] sm:h-[377px] max-w-[178px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
+                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
+                                    <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
+                                </button>
+                                <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- bedoon products (hidden) — same half-under hover, box > section bg -->
-            <div id="bedoon-products" class="hidden mt-16 flex flex-wrap justify-center gap-6 lg:gap-8">
-                <div class="group gaz-card relative w-[288px] h-[317px] rounded-[32px] flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
-                    <img src="images/dogh.svg" alt="دوغ بدون گاز" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[344px] sm:h-[410px] max-w-[220px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
-                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                        <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
-                            <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
-                        </button>
-                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+            <!-- bedoon products (hidden) — desktop grid, mobile scale slider (autoplay) -->
+            <div id="bedoon-products" class="embla-gaz mt-16 hidden">
+                <div class="embla__container">
+                    <div class="embla__slide">
+                        <div class="group gaz-card relative w-[288px] max-sm:w-[240px] h-[317px] max-sm:h-[280px] rounded-[32px] flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
+                            <img src="images/dogh.svg" alt="دوغ بدون گاز" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[344px] sm:h-[410px] max-w-[220px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
+                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
+                                    <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
+                                </button>
+                                <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="group gaz-card relative w-[288px] h-[317px] rounded-[32px] flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
-                    <img src="images/dogh-slide-3.svg" alt="دوغ بدون گاز" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[328px] sm:h-[377px] max-w-[178px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
-                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                        <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
-                            <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
-                        </button>
-                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+                    <div class="embla__slide">
+                        <div class="group gaz-card relative w-[288px] max-sm:w-[240px] h-[317px] max-sm:h-[280px] rounded-[32px] flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
+                            <img src="images/dogh-slide-3.svg" alt="دوغ بدون گاز" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[328px] sm:h-[377px] max-w-[178px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
+                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
+                                    <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
+                                </button>
+                                <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="group relative w-[288px] h-[317px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
-                    <img src="images/dogh-slide-1.svg" alt="دوغ بدون گاز" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[295px] sm:h-[316px] max-w-[200px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
-                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                        <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
-                            <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
-                        </button>
-                        <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+                    <div class="embla__slide">
+                        <div class="group relative w-[288px] max-sm:w-[240px] h-[317px] max-sm:h-[280px] rounded-[32px] gaz-card flex items-end justify-center bg-[#DDE7F0] group-hover:bg-[#4383C4] transition-colors duration-300">
+                            <img src="images/dogh-slide-1.svg" alt="دوغ بدون گاز" class="absolute left-1/2 -translate-x-1/2 bottom-0 w-auto h-[295px] sm:h-[316px] max-w-[200px] object-contain translate-y-[22%] group-hover:translate-y-0 transition-transform duration-500 ease-out will-change-transform z-0">
+                            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 w-[90%] justify-center opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
+                                <button class="size-[48px] rounded-2xl bg-white flex items-center justify-center shadow-sm">
+                                    <img src="images/icons/shopping-cart.svg" alt="سبد" class="size-5">
+                                </button>
+                                <span class="flex-1 max-w-[180px] h-[48px] rounded-2xl bg-white text-[#4383C4] font-bold text-sm flex items-center justify-center">افزودن به سبد خرید</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -344,24 +360,24 @@
         </section>
 
     <!-- stats — white bg correctly placed, box #4383C4 rounded 34 py44, numbers 64 FaNum Bold, pt173 (113+60 gap) pb127 -->
-    <section id="stats-section" class="bg-white py-[128px]">
+    <section id="stats-section" class="bg-white py-10 sm:py-[128px]">
         <div class="container">
             <div class="relative">
                 <!-- faint under left -->
-                <div class="absolute inset-0 translate-y-3 -translate-x-3 bg-[#4383C4]/[0.24] rounded-[34px]"></div>
-                <!-- main box -->
-                <div class="relative bg-[#4383C4] rounded-[34px] py-[44px] px-6 sm:px-10 flex flex-col sm:flex-row justify-around items-center gap-8 sm:gap-4 text-white text-center">
-                    <div class="flex flex-col items-center">
-                        <span class="stat-number font-black leading-none text-[40px] sm:text-[48px] lg:text-[64px]" style="font-family:'BonyadeKoodakFaNum'" data-target="91" data-suffix="%">۰</span>
-                        <span class="mt-3 text-[18px] sm:text-[24px] lg:text-[32px] font-light">رضایت مصرف کننده</span>
+                <div class="absolute inset-0 translate-y-3 -translate-x-3 bg-[#4383C4]/[0.24] rounded-[24px] sm:rounded-[34px]"></div>
+                <!-- main box — horizontal on all screens, compact on mobile -->
+                <div class="relative bg-[#4383C4] rounded-[24px] sm:rounded-[34px] py-6 sm:py-[44px] px-3 sm:px-10 flex flex-row justify-around items-center gap-2 sm:gap-4 text-white text-center">
+                    <div class="flex flex-1 min-w-0 flex-col items-center">
+                        <span class="stat-number font-black leading-none text-[26px] sm:text-[48px] lg:text-[64px]" style="font-family:'BonyadeKoodakFaNum'" data-target="91" data-suffix="%">۰</span>
+                        <span class="mt-1 sm:mt-3 text-[12px] sm:text-[24px] lg:text-[32px] leading-6 font-light">رضایت مصرف کننده</span>
                     </div>
-                    <div class="flex flex-col items-center">
-                        <span class="stat-number font-black leading-none text-[40px] sm:text-[48px] lg:text-[64px]" style="font-family:'BonyadeKoodakFaNum'" data-target="100" data-suffix="%">۰</span>
-                        <span class="mt-3 text-[18px] sm:text-[24px] lg:text-[32px] font-light">موجود در سراسر کشور</span>
+                    <div class="flex flex-1 min-w-0 flex-col items-center">
+                        <span class="stat-number font-black leading-none text-[26px] sm:text-[48px] lg:text-[64px]" style="font-family:'BonyadeKoodakFaNum'" data-target="100" data-suffix="%">۰</span>
+                        <span class="mt-1 sm:mt-3 text-[12px] sm:text-[24px] lg:text-[32px] leading-6 font-light">موجود در سراسر کشور</span>
                     </div>
-                    <div class="flex flex-col items-center">
-                        <span class="stat-number font-black leading-none text-[40px] sm:text-[48px] lg:text-[64px]" style="font-family:'BonyadeKoodakFaNum'" data-target="31" data-suffix="">۰</span>
-                        <span class="mt-3 text-[18px] sm:text-[24px] lg:text-[32px] font-light">سال اعتبار در کنار شما</span>
+                    <div class="flex flex-1 min-w-0 flex-col items-center">
+                        <span class="stat-number font-black leading-none text-[26px] sm:text-[48px] lg:text-[64px]" style="font-family:'BonyadeKoodakFaNum'" data-target="31" data-suffix="">۰</span>
+                        <span class="mt-1 sm:mt-3 text-[12px] sm:text-[24px] lg:text-[32px] leading-6 font-light">سال اعتبار در کنار شما</span>
                     </div>
                 </div>
             </div>
@@ -401,24 +417,24 @@
                     <div class="embla-comments relative w-[337px] h-[439px] overflow-hidden rounded-2xl bg-white shadow-sm" dir="ltr">
                         <div class="embla__container flex flex-col h-full">
                             <div class="embla__slide flex-[0_0_100%] min-w-0 flex flex-col">
-                                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=280&fit=crop" alt="نظر" class="w-full h-[220px] object-cover shrink-0">
-                                <div class="flex-1 bg-[#FDC939] p-5 flex flex-col gap-3 justify-center text-right" dir="rtl">
-                                    <h3 class="font-bold text-[#1e1e1e] text-base text-right">توی یک ظهر گرم تابستونی..</h3>
-                                    <p class="text-[#1e1e1e]/80 text-sm leading-relaxed text-right">دوغ آبعلی توی یک ظهر گرم تابستونی خیلی میچسبه !</p>
+                                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=280&fit=crop" alt="نظر" class="w-full flex-1 min-h-0 object-cover">
+                                <div class="shrink-0 bg-[#FDC939] px-5 pt-6 pb-10 flex flex-col gap-2 justify-center items-center text-center" dir="rtl">
+                                    <h3 class="font-bold text-[#1e1e1e] text-[24px] leading-tight text-center">توی یک ظهر گرم تابستونی..</h3>
+                                    <p class="text-[#1e1e1e]/80 text-[16px] leading-relaxed text-center">دوغ آبعلی توی یک ظهر گرم تابستونی خیلی میچسبه !</p>
                                 </div>
                             </div>
                             <div class="embla__slide flex-[0_0_100%] min-w-0 flex flex-col">
-                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=280&fit=crop" alt="نظر" class="w-full h-[220px] object-cover shrink-0">
-                                <div class="flex-1 bg-[#FDC939] p-5 flex flex-col gap-3 justify-center text-right" dir="rtl">
-                                    <h3 class="font-bold text-[#1e1e1e] text-base text-right">همراه همیشگی سفره</h3>
-                                    <p class="text-[#1e1e1e]/80 text-sm leading-relaxed text-right">طعم اصیل آبعلی هر جا همراه ماست، از شمال تا جنوب.</p>
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=280&fit=crop" alt="نظر" class="w-full flex-1 min-h-0 object-cover">
+                                <div class="shrink-0 bg-[#FDC939] px-5 pt-6 pb-10 flex flex-col gap-2 justify-center items-center text-center" dir="rtl">
+                                    <h3 class="font-bold text-[#1e1e1e] text-[24px] leading-tight text-center">همراه همیشگی سفره</h3>
+                                    <p class="text-[#1e1e1e]/80 text-[16px] leading-relaxed text-center">طعم اصیل آبعلی هر جا همراه ماست، از شمال تا جنوب.</p>
                                 </div>
                             </div>
                             <div class="embla__slide flex-[0_0_100%] min-w-0 flex flex-col">
-                                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=280&fit=crop" alt="نظر" class="w-full h-[220px] object-cover shrink-0">
-                                <div class="flex-1 bg-[#FDC939] p-5 flex flex-col gap-3 justify-center text-right" dir="rtl">
-                                    <h3 class="font-bold text-[#1e1e1e] text-base text-right">غرب، همیشه همراه</h3>
-                                    <p class="text-[#1e1e1e]/80 text-sm leading-relaxed text-right">طعم غرب، یادآور خاطره‌های ناب آبعلی.</p>
+                                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&h=280&fit=crop" alt="نظر" class="w-full flex-1 min-h-0 object-cover">
+                                <div class="shrink-0 bg-[#FDC939] px-5 pt-6 pb-10 flex flex-col gap-2 justify-center items-center text-center" dir="rtl">
+                                    <h3 class="font-bold text-[#1e1e1e] text-[24px] leading-tight text-center">غرب، همیشه همراه</h3>
+                                    <p class="text-[#1e1e1e]/80 text-[16px] leading-relaxed text-center">طعم غرب، یادآور خاطره‌های ناب آبعلی.</p>
                                 </div>
                             </div>
                         </div>
@@ -443,10 +459,10 @@
                 <div class="relative w-[320px] h-[320px] sm:w-[450px] sm:h-[450px] lg:w-[575px] lg:h-[575px] shrink-0 flex items-center justify-center">
                     <div class="absolute inset-0 bg-[#EAF0F8] rounded-full"></div>
                     <img src="images/map.svg" alt="نقشه ایران" class="relative w-full h-[609.3px] max-lg:h-[450px] max-sm:h-[320px] object-contain z-10">
-                    <img id="region-brasil" src="images/Brasil.svg" alt="جنوب" class="absolute z-10 w-[20%] h-auto bottom-[18%] left-[48%] -translate-x-1/2 transition-all duration-500">
+                    <img id="region-brasil" src="images/Brasil.svg" alt="جنوب" class="absolute z-10 w-[20%] h-auto bottom-[18%] left-[51%] -translate-x-1/2 transition-all duration-500">
                     <img id="region-chinase" src="images/Chinase.svg" alt="شمال" class="absolute z-10 w-[32%] h-auto top-[22%] left-[42%] -translate-x-1/2 opacity-0 scale-90 transition-all duration-500">
                     <img id="region-west" src="images/Brasil.svg" alt="غرب" class="absolute z-10 w-[16%] h-auto top-[26%] left-[24%] -translate-x-1/2 opacity-0 scale-90 transition-all duration-500">
-                    <div id="pin-south" class="absolute z-20 bottom-[22%] left-[52%] -translate-x-1/2 flex flex-col items-center transition-all duration-500">
+                    <div id="pin-south" class="absolute z-20 bottom-[22%] left-[55%] -translate-x-1/2 flex flex-col items-center transition-all duration-500">
                         <div class="size-[48px] sm:size-[56px] rounded-full bg-[#FDC939] p-1 shadow-md flex items-center justify-center">
                             <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=100&h=100&fit=crop&crop=face" alt="جنوب" class="w-full h-full rounded-full object-cover">
                         </div>

@@ -279,10 +279,116 @@ gazTabs.forEach((tab) => {
     });
 
     gazdarProducts?.classList.toggle('hidden', !isGazdar);
-    gazdarProducts?.classList.toggle('flex', isGazdar);
     bedoonProducts?.classList.toggle('hidden', isGazdar);
-    bedoonProducts?.classList.toggle('flex', !isGazdar);
+    // re-measure the now-visible slider (hidden Embla has 0 size)
+    requestAnimationFrame(() => setupGazSliders());
   });
+});
+
+// ── Gaz mobile scale slider: autoplay ping-pong, center bigger (desktop = static grid) ──
+const gazMedia = window.matchMedia('(max-width: 1023.5px)');
+const gazReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const GAZ_AUTOPLAY_MS = 3000;
+let gazdarEmbla = null;
+let bedoonEmbla = null;
+let gazdarTimer = null;
+let bedoonTimer = null;
+let gazdarDir = 1;
+let bedoonDir = 1;
+
+function setGazActive(embla, viewport) {
+  if (!embla || !viewport) return;
+  const idx = embla.selectedScrollSnap();
+  viewport.querySelectorAll('.embla__slide').forEach((s, i) => {
+    s.classList.toggle('is-active', i === idx);
+  });
+}
+
+function stopGazAutoplay(which) {
+  if (which === 'bedoon') {
+    clearInterval(bedoonTimer);
+    bedoonTimer = null;
+  } else {
+    clearInterval(gazdarTimer);
+    gazdarTimer = null;
+  }
+}
+
+function startGazAutoplay(viewport, which) {
+  stopGazAutoplay(which);
+  if (gazReduceMotion.matches) return;
+  const embla = which === 'bedoon' ? bedoonEmbla : gazdarEmbla;
+  if (!embla || !gazMedia.matches || viewport.classList.contains('hidden')) return;
+  const id = setInterval(() => {
+    if (document.hidden || !gazMedia.matches || viewport.classList.contains('hidden')) return;
+    const snaps = embla.scrollSnapList().length;
+    let dir = which === 'bedoon' ? bedoonDir : gazdarDir;
+    const idx = embla.selectedScrollSnap();
+    // ping-pong at the ends — no wrap-around, nothing flies in from behind
+    if (idx >= snaps - 1) dir = -1;
+    else if (idx <= 0) dir = 1;
+    if (which === 'bedoon') bedoonDir = dir;
+    else gazdarDir = dir;
+    if (dir > 0) embla.scrollNext();
+    else embla.scrollPrev();
+  }, GAZ_AUTOPLAY_MS);
+  if (which === 'bedoon') bedoonTimer = id;
+  else gazdarTimer = id;
+}
+
+function createGazEmbla(viewport, which) {
+  if (!viewport) return null;
+  const embla = EmblaCarousel(viewport, {
+    loop: false,
+    align: 'center',
+    // trimSnaps (default) pins edge slides to the sides — false lets
+    // the first/last slide center too, so every item takes the middle
+    containScroll: false,
+    direction: 'rtl',
+    slidesToScroll: 1,
+  });
+  const onSelect = () => setGazActive(embla, viewport);
+  embla.on('select', onSelect);
+  embla.on('reInit', onSelect);
+  // pause autoplay while the user drags, resume after
+  embla.on('pointerDown', () => stopGazAutoplay(which));
+  embla.on('pointerUp', () => startGazAutoplay(viewport, which));
+  onSelect();
+  if (which === 'bedoon') bedoonEmbla = embla;
+  else gazdarEmbla = embla;
+  startGazAutoplay(viewport, which);
+  return embla;
+}
+
+function destroyGazEmbla(embla, viewport) {
+  stopGazAutoplay(viewport === bedoonProducts ? 'bedoon' : 'gazdar');
+  try { embla?.destroy(); } catch { /* noop */ }
+  viewport?.querySelectorAll('.embla__slide').forEach((s) => s.classList.remove('is-active'));
+  return null;
+}
+
+function setupGazSliders() {
+  if (gazMedia.matches) {
+    if (gazdarProducts && !gazdarProducts.classList.contains('hidden')) {
+      if (!gazdarEmbla) createGazEmbla(gazdarProducts, 'gazdar');
+      else { try { gazdarEmbla.reInit(); } catch { /* noop */ } setGazActive(gazdarEmbla, gazdarProducts); startGazAutoplay(gazdarProducts, 'gazdar'); }
+    } else stopGazAutoplay('gazdar');
+    if (bedoonProducts && !bedoonProducts.classList.contains('hidden')) {
+      if (!bedoonEmbla) createGazEmbla(bedoonProducts, 'bedoon');
+      else { try { bedoonEmbla.reInit(); } catch { /* noop */ } setGazActive(bedoonEmbla, bedoonProducts); startGazAutoplay(bedoonProducts, 'bedoon'); }
+    } else stopGazAutoplay('bedoon');
+  } else {
+    if (gazdarEmbla) gazdarEmbla = destroyGazEmbla(gazdarEmbla, gazdarProducts);
+    if (bedoonEmbla) bedoonEmbla = destroyGazEmbla(bedoonEmbla, bedoonProducts);
+  }
+}
+
+setupGazSliders();
+gazMedia.addEventListener?.('change', setupGazSliders);
+let gazResizeTimer = null;
+window.addEventListener('resize', () => {
+  clearTimeout(gazResizeTimer);
+  gazResizeTimer = setTimeout(setupGazSliders, 150);
 });
 
 // ── Stats count-up once on enter viewport (BonyadeKoodakFaNum 64px/32px) ──
