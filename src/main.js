@@ -1,5 +1,6 @@
 import './main.css';
 import EmblaCarousel from 'embla-carousel';
+import Autoplay from 'embla-carousel-autoplay';
 
 // Hamburger Menu + mobile dropdown
 const hamburger = document.getElementById('hamburger');
@@ -436,14 +437,14 @@ if (statsSection && statNumbers.length) {
   io.observe(statsSection);
 }
 
-// ── Comments fade 337x439, dots inside, west higher ──
+// ── Comments Embla vertical 337x439 + Autoplay + map sync ──
+const commentsNode = document.querySelector('.embla-comments');
 const regionBrasil = document.getElementById('region-brasil');
 const regionChinase = document.getElementById('region-chinase');
 const pinSouth = document.getElementById('pin-south');
 const pinNorth = document.getElementById('pin-north');
 const commentsDots = document.querySelectorAll('.comments-dot');
-const commentsSlides = document.querySelectorAll('.embla-comments .embla__slide');
-let commentsCurrent = 0;
+const commentsMedia = window.matchMedia('(max-width: 639px)');
 function syncMap(idx) {
   const isSouth = idx === 0;
   const isNorth = idx === 1;
@@ -470,33 +471,31 @@ function syncMap(idx) {
   pinWest?.classList.toggle('pointer-events-none', !isWest);
 }
 function syncCommentsDots(idx) {
-  commentsDots.forEach((d,i)=>{
-    const active = i===idx;
+  const isMobile = commentsMedia.matches;
+  commentsDots.forEach((d, i) => {
+    const active = i === idx;
     d.classList.toggle('bg-white', active);
     d.classList.toggle('bg-white/60', !active);
-    d.style.width = active ? '65px' : '10px';
-    d.style.height = '8px';
+    d.style.width = active ? (isMobile ? '40px' : '65px') : (isMobile ? '8px' : '10px');
+    d.style.height = isMobile ? '6px' : '8px';
   });
 }
-function setCommentSlide(idx) {
-  if (!commentsSlides.length) return;
-  const next = ((idx % commentsSlides.length) + commentsSlides.length) % commentsSlides.length;
-  if (next === commentsCurrent && commentsSlides[next]?.classList.contains('is-active')) return;
-  commentsSlides.forEach((slide,i)=>{
-    slide.classList.toggle('is-active', i===next);
-  });
-  syncMap(next);
-  syncCommentsDots(next);
-  commentsCurrent = next;
+let commentsEmbla = null;
+if (commentsNode) {
+  const autoplay = Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: true, stopOnFocusIn: true });
+  commentsEmbla = EmblaCarousel(commentsNode, { axis: 'y', loop: true, containScroll: 'trimSnaps' }, [autoplay]);
+  const onSelect = () => {
+    const idx = commentsEmbla.selectedScrollSnap();
+    syncMap(idx);
+    syncCommentsDots(idx);
+  };
+  commentsEmbla.on('select', onSelect);
+  commentsEmbla.on('reInit', onSelect);
+  commentsMedia.addEventListener?.('change', onSelect);
+  onSelect();
 }
-// init fade state
-if (commentsSlides.length) {
-  commentsSlides.forEach((slide,i)=> slide.classList.toggle('is-active', i===0));
-  syncMap(0);
-  syncCommentsDots(0);
-}
-commentsDots.forEach((d)=>{
-  d.addEventListener('click', ()=> setCommentSlide(Number(d.dataset.slide)));
+commentsDots.forEach((d) => {
+  d.addEventListener('click', () => commentsEmbla?.scrollTo(Number(d.dataset.slide)));
 });
-document.getElementById('comments-prev')?.addEventListener('click', () => setCommentSlide(commentsCurrent - 1));
-document.getElementById('comments-next')?.addEventListener('click', () => setCommentSlide(commentsCurrent + 1));
+document.getElementById('comments-prev')?.addEventListener('click', () => commentsEmbla?.scrollPrev());
+document.getElementById('comments-next')?.addEventListener('click', () => commentsEmbla?.scrollNext());
