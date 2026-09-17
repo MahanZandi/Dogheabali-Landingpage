@@ -1,11 +1,31 @@
 import './main.css';
 import EmblaCarousel from 'embla-carousel';
 
-// Hamburger Menu Toggle
+// Hamburger Menu + mobile dropdown
 const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+function closeMobileMenu() {
+  hamburger?.classList.remove('is-active');
+  hamburger?.setAttribute('aria-expanded', 'false');
+  mobileMenu?.classList.add('hidden');
+  mobileMenu?.classList.remove('open');
+}
 if (hamburger) {
   hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('is-active');
+    const open = hamburger.classList.toggle('is-active');
+    hamburger.setAttribute('aria-expanded', String(open));
+    mobileMenu?.classList.toggle('hidden', !open);
+    mobileMenu?.classList.toggle('open', open);
+  });
+  mobileMenu?.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', closeMobileMenu);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMobileMenu();
+  });
+  // never leave the dropdown open on desktop
+  window.matchMedia('(min-width: 640px)').addEventListener?.('change', (e) => {
+    if (e.matches) closeMobileMenu();
   });
 }
 
@@ -148,10 +168,9 @@ let programmaticTimer = null;
 
 function onSliderScroll() {
   if (!slider.wrapper || isProgrammaticScroll) return;
-  // On mobile (lg↓) sticky disabled → no scroll-driven change
-  if (window.matchMedia('(max-width: 1024px)').matches) return;
   const rect = slider.wrapper.getBoundingClientRect();
   const vh = window.innerHeight;
+  // sticky pinned on all screens (60vh per slide) → same math for mobile & desktop
   const scrolled = -rect.top;
   if (scrolled < 0) {
     if (slider.current !== 0) updateSlider(0);
@@ -168,11 +187,6 @@ slider.indicators.forEach((ind) => {
   ind.addEventListener('click', () => {
     const target = Number(ind.dataset.slide);
     if (target === slider.current || !slider.wrapper) return;
-    // Mobile: just update, no sticky scroll sync
-    if (window.matchMedia('(max-width: 1024px)').matches) {
-      updateSlider(target);
-      return;
-    }
     isProgrammaticScroll = true;
     clearTimeout(programmaticTimer);
     updateSlider(target);

@@ -15,39 +15,48 @@
         <nav class="container">
             <div class="relative">
                 <div
-                    class="flex justify-between items-center pt-5 max-lg:pt-4 pb-6 max-lg:pb-5 z-10 relative px-[60px] max-lg:px-6 max-sm:px-4 bg-white rounded-b-[22px]">
-                    <div>
+                    class="flex justify-between items-center py-5 max-lg:py-4 max-sm:py-3 min-h-[84px] max-lg:min-h-[76px] max-sm:min-h-[60px] z-10 relative px-[60px] max-lg:px-6 max-sm:px-4 bg-white rounded-b-[22px]">
+                    <div class="flex-1 flex justify-start">
                         <!-- animated hamburger menu -->
                         <button id="hamburger"
-                            class="flex flex-col justify-center items-center w-10 h-10 gap-[6px] cursor-pointer"
-                            aria-label="Menu">
+                            class="flex flex-col justify-center items-center w-10 h-10 max-sm:w-8 max-sm:h-8 gap-[6px] max-sm:gap-[5px] cursor-pointer shrink-0"
+                            aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
                             <span
-                                class="hamburger-line block w-6 h-[3px] bg-abali-darya rounded-full transition-all duration-300 ease-in-out"></span>
+                                class="hamburger-line block w-6 max-sm:w-5 h-[3px] max-sm:h-[2px] bg-abali-darya rounded-full transition-all duration-300 ease-in-out"></span>
                             <span
-                                class="hamburger-line block w-6 h-[3px] bg-abali-darya rounded-full transition-all duration-300 ease-in-out"></span>
+                                class="hamburger-line block w-6 max-sm:w-5 h-[3px] max-sm:h-[2px] bg-abali-darya rounded-full transition-all duration-300 ease-in-out"></span>
                             <span
-                                class="hamburger-line block w-6 h-[3px] bg-abali-darya rounded-full transition-all duration-300 ease-in-out"></span>
+                                class="hamburger-line block w-6 max-sm:w-5 h-[3px] max-sm:h-[2px] bg-abali-darya rounded-full transition-all duration-300 ease-in-out"></span>
                         </button>
                     </div>
 
                     <!-- logo (absolute center) -->
-                    <img class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[60px] max-lg:h-[50px] max-sm:h-[40px] w-fit max-w-full"
+                    <img class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[60px] max-lg:h-[50px] max-sm:h-[32px] w-auto max-w-[38vw] object-contain"
                         src="images/Logo.svg" alt="دوغ ابعلی">
 
-                    <div class="flex gap-[14px]">
+                    <div class="flex-1 flex justify-end gap-[14px] max-sm:gap-2">
                         <!-- cart button -->
-                        <button class="p-2 bg-[#F0F0F0] rounded-lg">
-                            <img src="images/icons/shopping-cart.svg" alt="cart icon">
+                        <button class="size-[38px] max-sm:size-[32px] flex items-center justify-center bg-[#F0F0F0] rounded-lg shrink-0">
+                            <img src="images/icons/shopping-cart.svg" alt="cart icon" class="size-6 max-sm:size-[18px]">
                         </button>
 
                         <button
-                            class="flex rounded-lg gap-2 max-sm:gap-1.5 h-[38px] max-sm:h-[32px] pl-2 max-sm:pl-1.5 pr-6 max-sm:pr-3 bg-abali-darya text-white text-xs max-sm:text-[10px] font-bold items-center">
-                            <span>ثبت نام یا ورود</span>
+                            class="flex rounded-lg gap-2 max-sm:gap-1.5 h-[38px] max-sm:h-[32px] pl-2 max-sm:pl-1.5 pr-6 max-sm:pr-2 bg-abali-darya text-white text-xs max-sm:text-[10px] font-bold items-center">
+                            <span><span class="max-sm:hidden">ثبت نام یا </span>ورود</span>
                             <img class="size-6 max-sm:size-5" src="images/icons/profile-2user.svg" alt="person icon">
                         </button>
                     </div>
                 </div>
-                <div class="h-[105px] max-lg:h-[90px] max-sm:h-[80px] relative -top-10 rounded-[22px] pb-4 mx-3 max-lg:mx-3 max-sm:mx-0 bg-[#345B85]">
+                <!-- mobile dropdown (sm↓ only, toggled by hamburger) -->
+                <div id="mobile-menu" class="hidden sm:hidden absolute top-full inset-x-0 z-20 mt-2 rounded-2xl bg-white shadow-xl shadow-black/10 overflow-hidden">
+                    <nav class="flex flex-col py-2 text-sm font-bold text-abali-darya">
+                        <a href="/" class="mobile-link px-5 py-3 hover:bg-[#DDE7F0] transition-colors">نظرات شما</a>
+                        <a href="/" class="mobile-link px-5 py-3 border-t border-[#DDE7F0] hover:bg-[#DDE7F0] transition-colors">خرید آنلاین</a>
+                        <a href="/" class="mobile-link px-5 py-3 border-t border-[#DDE7F0] hover:bg-[#DDE7F0] transition-colors">آشنایی با ما</a>
+                        <a href="/" class="mobile-link px-5 py-3 border-t border-[#DDE7F0] hover:bg-[#DDE7F0] transition-colors">ویژگی ها</a>
+                    </nav>
+                </div>
+                <div class="h-[105px] max-lg:h-[90px] max-sm:h-[80px] relative -top-10 rounded-[22px] pb-4 mx-3 max-lg:mx-3 max-sm:mx-0 bg-[#345B85] max-sm:hidden">
                     <nav id="nav-links"
                         class="relative text-base text-white font-semibold flex gap-10 justify-center items-end h-full">
                         <a href="/" class="nav-link relative pb-1"> نظرات شما</a>
@@ -62,7 +71,7 @@
         </nav>
 
         <!-- hero title -->
-        <div class="mt-[75px] max-lg:mt-[60px] max-sm:mt-[40px] flex justify-center relative max-sm:px-4">
+        <div class="mt-[75px] max-lg:mt-[60px] max-sm:mt-[24px] flex justify-center relative max-sm:px-4">
             <!-- halo 1 (top-right, near "دوغت") -->
             <div
                 class="absolute -top-20 max-lg:-top-16 max-sm:-top-10 -right-20 max-lg:-right-16 max-sm:-right-10 w-[411px] max-lg:w-[300px] max-sm:w-[200px] h-[411px] max-lg:h-[300px] max-sm:h-[200px] rounded-full bg-white/39 blur-[100px] max-lg:blur-[80px] max-sm:blur-[60px] pointer-events-none">
@@ -73,7 +82,7 @@
                 class="absolute top-44 max-lg:top-32 max-sm:top-24 -right-40 max-lg:-right-32 max-sm:-right-20 w-[411px] max-lg:w-[300px] max-sm:w-[200px] h-[411px] max-lg:h-[300px] max-sm:h-[200px] rounded-full bg-white/25 blur-[100px] max-lg:blur-[80px] max-sm:blur-[60px] pointer-events-none">
             </div>
 
-            <div class="text-white flex flex-col items-center text-center">
+            <div class="text-white flex flex-col items-center text-center lg:gap-6 max-sm:gap-4">
                 <h2 class="px-5 max-lg:px-4 max-sm:px-3 py-[10px] max-sm:py-2 text-[28px] max-lg:text-[22px] max-sm:text-[16px] font-medium bg-white/20 rounded-lg w-fit flex gap-2 items-center max-w-full">
                     <span> با آبعلی خاطره هات رو به یادماندنی کن </span> <img src="images/icon.png" class="size-8 max-sm:size-6 max-w-full"
                         alt="">
@@ -82,7 +91,7 @@
                 <h2 class="text-[120px] max-lg:text-[90px] max-md:text-[64px] max-sm:text-[48px] font-black leading-none">
                     دوغـت رو بنــــوش!
                 </h2>
-                <div class="mt-[11px] lg:pr-36 max-lg:pr-0 w-full flex gap-3 max-sm:gap-2 justify-center lg:justify-start">
+                <div class="mt-[11px] max-sm:mt-0 lg:mt-0 lg:pr-36 max-lg:pr-0 w-full flex gap-3 max-sm:gap-2 justify-center lg:justify-start">
                     <span class="text-white text-2xl max-lg:text-xl max-sm:text-base">از اینجا بازش کن!</span>
                     <img src="images/icons/Arrow.png" alt="Arrow" class="max-sm:w-16 h-auto">
                 </div>
@@ -90,7 +99,7 @@
         </div>
 
         <!-- header background -->
-        <div class="mt-[170px] max-lg:mt-[120px] max-sm:mt-[80px] flex justify-center relative max-sm:px-4">
+        <div class="mt-[170px] max-lg:mt-[120px] max-sm:mt-[120px] flex justify-center relative max-sm:px-4">
             <!-- halo 3 (below yellow bg, left of center item) -->
             <div
                 class="absolute -bottom-40 max-lg:-bottom-32 max-sm:-bottom-20 -left-32 max-lg:-left-24 max-sm:-left-16 w-[411px] max-lg:w-[300px] max-sm:w-[200px] h-[411px] max-lg:h-[300px] max-sm:h-[200px] rounded-full bg-white/39 blur-[100px] max-lg:blur-[80px] max-sm:blur-[60px] pointer-events-none">
@@ -133,7 +142,7 @@
                 </div>
                 <!-- center hero image dogh -->
                 <div id="dogh-animation"
-                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible max-lg:w-[280px] max-sm:w-[170px] max-w-full">
+                    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-visible max-lg:w-[280px] max-sm:w-[130px] max-w-full">
                     <img id="dogh-main" class="dogh-animated w-full max-w-full h-auto" src="images/dogh.svg" alt="دوغ آبعلی">
                     <div id="dogh-frame-2-wrapper" class="hidden relative">
                         <img id="dogh-frame-2" class="dogh-frame-2" src="images/dogh-frame-2.png" alt="دوغ آبعلی">
@@ -157,9 +166,9 @@
     <main class="container flex flex-col">
 
         <!-- features section -->
-        <section id="features-slider-wrapper" class="h-[220vh] max-lg:h-auto relative">
+        <section id="features-slider-wrapper" class="h-[220vh] relative">
             <div id="features-slider"
-                class="sticky max-lg:static top-0 h-screen max-lg:h-auto py-[124px] max-lg:py-12 overflow-hidden max-lg:overflow-visible flex max-lg:flex-col justify-between max-lg:justify-center items-center max-lg:gap-8">
+                class="sticky top-0 h-screen max-lg:h-[100svh] py-[124px] max-lg:py-6 overflow-hidden max-lg:overflow-visible flex max-lg:flex-col justify-between max-lg:justify-center items-center max-lg:gap-8">
                 <div class="flex flex-col gap-6 lg:gap-[42px] justify-center max-w-[520px] max-lg:max-w-full max-lg:text-center max-lg:items-center">
                     <span id="slide-tag"
                         class="text-[22px] lg:text-[32px] font-bold w-fit bg-abali-zafaran py-2 px-3 rounded-md text-[#0E0E0E]">ویژگی
@@ -197,7 +206,7 @@
         </section>
 
         <!-- video — embla slider, dir isolated, rounded 73px h 636px -->
-        <section class="py-10">
+        <section class="py-10 max-sm:pb-4">
             <div class="embla-video relative h-[636px] max-lg:h-[400px] max-sm:h-[280px] rounded-[73px] max-lg:rounded-[40px] max-sm:rounded-[24px] overflow-hidden bg-black" dir="ltr">
                 <div class="embla__container flex h-full">
                     <div class="embla__slide flex-[0_0_100%] min-w-0 relative h-full">
@@ -267,8 +276,8 @@
     </main>
 
     <!-- گاز دار / بدون گاز — full bleed bg, container respected -->
-    <section id="gaz-section" class="mt-[90px] mb-0 bg-[#EEEEEE] overflow-hidden">
-        <div class="container pt-[166px] pb-[146px] max-lg:pt-[80px] max-lg:pb-[60px] max-sm:pt-[40px] max-sm:pb-[24px]">
+    <section id="gaz-section" class="mt-[90px] max-sm:mt-6 mb-0 bg-[#EEEEEE] overflow-hidden">
+        <div class="container pt-[166px] pb-[146px] max-lg:pt-[80px] max-lg:pb-[60px] max-sm:pt-[24px] max-sm:pb-[24px]">
             <!-- tabs -->
             <div class="flex justify-center">
                 <div class="bg-white rounded-2xl p-2 flex gap-3 sm:gap-4" dir="rtl">
@@ -384,22 +393,22 @@
         </div>
     </section>
 
-    <section class="container pt-[46px] pb-[94px] justify-between flex items-center gap-[100px]">
-        <div class="h-[430px] w-[587px] relative">
-            <div class="flex flex-col justify-center items-center text-white absolute -left-8 -top-2 w-[164px] h-[96px] rounded-[23px] bg-abali-darya">
+    <section class="container pt-[46px] pb-[94px] max-lg:pt-10 max-lg:pb-16 max-sm:pt-6 max-sm:pb-10 justify-center flex flex-col-reverse lg:flex-row items-center gap-12 max-sm:gap-8 lg:gap-[48px] xl:gap-[64px]">
+        <div class="relative h-[430px] w-[587px] max-lg:w-full max-lg:max-w-[480px] max-lg:h-auto max-sm:max-w-[320px]">
+            <div class="flex flex-col justify-center items-center text-white absolute -left-8 -top-2 max-lg:-left-4 max-sm:-left-2 w-[164px] h-[96px] rounded-[23px] bg-abali-darya">
                 <span class="font-black text-[38px]" style="font-family:'BonyadeKoodakFaNum'">100%</span>
                 <span class="text-2xl relative -top-3 font-light">با اطمینان</span>
             </div>
-            <img class="" src="images/product-view.png" alt="product-view">
+            <img class="max-lg:w-full max-lg:h-auto" src="images/product-view.png" alt="product-view">
         </div>
 
         <!-- texts -->
-        <div class="flex justify-center flex-col gap-12 text-[#0E0E0E] w-[630px]">
-            <h2 class="text-[46px] font-extrabold" style="font-family:'BonyadeKoodakFaNum'">دوغ آبعلی، همون همیشگی!</h2>
-            <p class="text-2xl font-light leading-10">با افتخار شرکت مینو می تواند ادعا کند که کیفیت دوغ آبعلی اندکی تغییر نسبت به گذشته نداشته است.</p>
-            <div class="flex gap-[18px] h-20">
-                <button class="font-bold rounded-[19px] w-full text-2xl text-white bg-abali-darya">ثبت سفارش</button>
-                <button class="font-bold rounded-[19px] w-full text-2xl text-abali-darya bg-abali-darya/15">دربـــاره مــا</button>
+        <div class="flex justify-center flex-col items-center lg:items-start text-center lg:text-start gap-12 max-lg:gap-8 max-sm:gap-5 text-[#0E0E0E] w-full lg:w-auto lg:flex-1 lg:max-w-[560px] xl:max-w-[630px]">
+            <h2 class="text-[46px] max-lg:text-[36px] max-sm:text-[26px] max-sm:leading-9 font-extrabold" style="font-family:'BonyadeKoodakFaNum'">دوغ آبعلی، همون همیشگی!</h2>
+            <p class="text-2xl max-lg:text-xl max-sm:text-base font-light leading-10 max-lg:leading-9 max-sm:leading-7">با افتخار شرکت مینو می تواند ادعا کند که کیفیت دوغ آبعلی اندکی تغییر نسبت به گذشته نداشته است.</p>
+            <div class="flex max-sm:flex-col gap-[18px] max-sm:gap-3 h-20 max-lg:h-16 max-sm:h-auto w-full">
+                <button class="font-bold rounded-[19px] max-sm:rounded-[14px] w-full h-full max-sm:h-[52px] text-2xl max-lg:text-xl max-sm:text-base text-white bg-abali-darya">ثبت سفارش</button>
+                <button class="font-bold rounded-[19px] max-sm:rounded-[14px] w-full h-full max-sm:h-[52px] text-2xl max-lg:text-xl max-sm:text-base text-abali-darya bg-abali-darya/15">دربـــاره مــا</button>
             </div>
         </div>
     </section>

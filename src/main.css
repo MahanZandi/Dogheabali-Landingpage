@@ -62,6 +62,37 @@ body {
   transform: translateY(-9px) rotate(-45deg);
 }
 
+@media (max-width: 640px) {
+  #hamburger.is-active .hamburger-line:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  #hamburger.is-active .hamburger-line:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+/* ── Mobile dropdown entrance ── */
+#mobile-menu.open {
+  animation: menu-drop 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes menu-drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #mobile-menu.open {
+    animation: none;
+  }
+}
+
 /* ── Dogh Shake Animation ── */
 .dogh-animated {
   cursor: pointer;
@@ -80,6 +111,7 @@ body {
 /* ── Dogh Frame 2: white steam burst effect ── */
 .dogh-frame-2 {
   width: 340px;
+  max-width: 100%;
   height: auto;
   display: block;
 }
@@ -168,6 +200,23 @@ body {
   100% {
     opacity: 0;
     transform: translateX(calc(-50% + 900px)) translateY(-900px) scale(1.4) rotate(24deg);
+  }
+}
+
+/* ── Dogh open-state effects proportional to the bottle ── */
+@media (max-width: 1024px) {
+  .dogh-frame-3.launching {
+    width: 100px;
+  }
+}
+
+@media (max-width: 640px) {
+  .dogh-frame-3.launching {
+    width: 64px;
+  }
+  /* steam burst scaled to the 130px bottle (independent `scale` keeps Tailwind translate intact) */
+  #dogh-steam.steaming {
+    scale: 0.55;
   }
 }
 
